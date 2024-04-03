@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yeseva+One&display=swap");
+:root {
+  /* FONT */
+  --primary-font: "Montserrat", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+  --emphasized-font: "Yeseva One", serif;
+
+  /* transition */
+  --transiton-2: all 0.2s ease-in-out;
+  --transiton-3: all 0.3s ease-in-out;
+  --transiton-4: all 0.4s ease-in-out;
+  --transiton-5: all 0.5s ease-in-out;
+  --transiton-6: all 0.6s ease-in-out;
+
+  /* Shadowing */
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  /* color */
+  --color-fade: #00000099;
+  --color-primary: black;
+
+  --gradient-pink: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 197, 197, 1) 100%
+  );
+
+  /* margin */
+  --page-margin: 3em;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-1 {
+  margin: 1em;
+}
+
+.p-1 {
+  padding: 1em;
+}
+
+body {
+  background-image: url(/asset/image/bg.png);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden ;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox;
+  /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%;
+  /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%;
+  /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%;
+  /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}

@@ -1,0 +1,9 @@
+.nav-location{
+    margin: 1em 0;
+    font-weight: 700;
+}
+
+.product-list{
+    background-color: rgba(0, 0, 0, 0.04);
+    width: fit-content;
+}

@@ -1,0 +1,112 @@
+.header-body .img img {
+  width: 100%; /* adjust as needed */
+  height: auto; /* maintain aspect ratio */
+ 
+  margin-bottom: 6em;
+}
+.header-body .shop-now-btn {
+  color: black;
+  text-decoration: none;
+
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  padding: 0.5em 1em;
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: var(--primary-font);
+  cursor: pointer;
+  width: fit-content;
+  height: auto;
+  rotate: -5deg;
+}
+
+.header-wrapper .header-body .shop-now-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid;
+  transition: var(--transiton-2);
+}
+
+@media screen and (max-width: 700px) {
+  .header-body .shop-now-btn {
+    color: black;
+    text-decoration: none;
+
+    position: absolute;
+    top: 41%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 0.5em 1em;
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: smaller;
+    font-family: var(--primary-font);
+    cursor: pointer;
+    width: fit-content;
+    height: auto;
+    rotate: -5deg;
+  }
+}
+
+/* COLLECTION */
+.new-collection {
+  padding: 0px 1em;
+}
+.new-collection h2 {
+  font-family: var(--emphasized-font);
+}
+
+/* BEST SELLER */
+.best-seller {
+  margin: 1em;
+}
+
+
+.bestSeller-shop-field{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+.bestSeller-shop-field > .item {
+  max-width: 300px;
+  margin: 10px;
+  min-width: min-content;
+}
+
+.bestSeller-shop-field .item  img {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.232);
+  height: auto;
+}
+
+.item-content{
+
+  font-family: var(--primary-font);
+  display: flex;
+  justify-content: space-between;
+}
+.item-content p{
+  margin-bottom: 0.2em;
+}
+.item-content .item-name{
+  font-weight: 800;
+  font-size: large;
+}
+
+.cart-icon-item{
+  width: 20px;
+  height: fit-content;
+  position: relative;
+  top: 3px; 
+  margin-left: 5px;
+}

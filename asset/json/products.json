@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Y2K pant",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i1.jpg"
+
+    },
+    {
+        "id": 2,
+        "name": "Asid pant",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i3.jpg"
+
+    },
+    {
+        "id": 3,
+        "name": "Masi",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i3.jpg"
+
+    },
+    {
+        "id": 4,
+        "name": "Koka",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i4.jpg"
+
+    },
+    {
+        "id": 5,
+        "name": "Yaku",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i5.jpg"
+
+    },
+    {
+        "id": 6,
+        "name": "Shiro",
+        "type": "bottom",
+        "price": 200,
+        "img" : "../image/SHOP-IMG/i6.jpg"
+
+    }
+]

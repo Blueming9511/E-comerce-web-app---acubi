@@ -1,0 +1,138 @@
+.title {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  font-size: 30px;
+  font-family: var(--emphasized-font);
+}
+
+.process {
+  margin-bottom: 1em;
+  text-align: center;
+}
+.process > a {
+  color: rgba(0, 0, 0, 0.318);
+  transition: var(--transiton-2);
+  font-weight: bold;
+}
+.process a:hover {
+  color: rgb(0, 0, 0);
+  transition: var(--transiton-2);
+}
+.process #shopping-cart {
+  color: black;
+}
+/* table */
+.shop-table {
+  border: 1px solid;
+  width: 100%;
+  height: fit-content;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  padding: 1em;
+}
+
+.cart-item .product {
+  display: flex;
+}
+
+.cart-item .product img {
+  width: 6em;
+  height: auto;
+}
+.cart-item .product .product-info {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-left: 1em;
+}
+
+.product-price {
+  margin-bottom: 0.5em;
+}
+.product-remove {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.shop-table thead {
+  background-color: lightgray;
+}
+
+@media screen and (max-width: 1000px) {
+  .header-body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.product-quantity > span {
+  display: inline-block;
+  line-height: 23px; /* The same as your element's height */
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.product-quantity .quantity {
+  color: black;
+  background-color: transparent;
+  border: none;
+}
+
+.cart-total {
+  display: flex;
+  margin: 1em 0;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: large;
+}
+
+.checkout {
+  width: 58%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.2em 1em;
+}
+
+.navToCheckout {
+  background-color: black;
+  padding: 0.5em 1em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid;
+  font-weight: bold;
+}
+
+.navToCheckout:hover {
+  background-color: white;
+  border: 1px solid;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+table {
+  max-width: 60em;
+}
+
+.checkout {
+}
+.cart-form {
+  display: grid;
+  place-items: center;
+}
