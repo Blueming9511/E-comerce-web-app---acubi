@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    outline: none;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    height: 6rem;
+    width: 100vw;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+.admin-content {
+    padding-top: 2rem;
+    display: flex;
+}
+
+.admin-content .left {
+    background: #dddd;
+    width: 20%;
+    height: 100vh;
+    padding: 2rem 0 0 1rem;
+}
+
+.admin-content .left > ul > li > a {
+    font-weight: 600;
+}
+
+.admin-content .left ul li {
+    margin: 1rem 0;
+}
+
+.admin-content .left ul ul {
+    margin-left: 1rem;
+}
+
+.admin-content .right {
+    width: 80%;
+    padding: 0rem 0 0rem 2rem;
+}
+
+.admin-content .add input{
+    height: 2rem;
+    width: 20rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.admin-content .add button{
+    display: block;
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: 8rem;
+    cursor: pointer;
+    border: none;
+}
+
+.admin-content .add button:hover{
+    background: tomato;
+    color: white;
+    transition: .3s;
+}
+
+.admin-content .add button:focus{
+    border: 2px solid rgb(133, 41, 24);
+    border-radius: .3rem;
+}
