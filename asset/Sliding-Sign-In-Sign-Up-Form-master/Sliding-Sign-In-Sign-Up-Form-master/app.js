@@ -12,7 +12,6 @@ sign_in_btn.addEventListener('click', () => {
 
 function validateSignIn () {
   let txtUserName = document.getElementById('usernameSI')
-  console.log('HIHI')
   let username = txtUserName.value
   let txtPwd = document.getElementById('pwdSI')
   let pwd = txtPwd.value
@@ -183,7 +182,7 @@ emailSU.oninput = function () {
     ) {
       errMsg.innerHTML = 'Please enter a valid email address'
     } else {
-      if (!isValidEmail(emailSU) && errMsg) {
+      if (isValidEmail(emailSU) && errMsg) {
         errMsg.style.display = 'none'
       }
     }
