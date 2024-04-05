@@ -4,11 +4,6 @@
   box-sizing: border-box;
   color: black;
   outline: none;
-  font-family: "Poppin", sans-serif;
-}
-
-h1 {
-  font-size: 5rem;
 }
 
 a {
@@ -44,7 +39,6 @@ header {
   width: fit-content;
   height: 100vh;
   padding: 0 1em;
-  /* padding: 2rem 0 0 1rem; */
 }
 
 .admin-content .left > ul > li > a {
@@ -93,44 +87,40 @@ header {
   border-radius: 0.3rem;
 }
 
-/* ----------list-------------- */
+.admin-content .right{
+  font-family: "Poppins";
+}
+
+.admin-content .right h1{
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+
+/* ----------Category list-------------- */
 .admin-content .right .list {
   margin-right: 2rem;
 }
-.admin-content .right .list table {
-  width: 100%;
+.right table {
   text-align: center;
-  margin-top: 2rem;
-}
-
-.admin-content .right .list table,
-tr,
-th,
-td {
-  border: 1px solid;
   border-collapse: collapse;
 }
 
+.right th, td {
+  padding: 1rem 5rem 1rem 0;
+  border-bottom: 1px solid;
+}
+
+.right table {
+  border-bottom: 1px solid;
+}
+
+.right table {
+  
+}
+
+
 /* ----------Product-------------- */
-.admin-content .right .product h1 {
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 1em;
-}
-
-.product-table td {
-  border: none;
-}
-
-.admin-content .right .product table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.admin-content .right .product td {
-  padding: 0 2rem 0 2rem;
-}
-
 .admin-content .right .product input,
 select,
 textarea {
@@ -178,11 +168,16 @@ span.money {
   width: 20%;
 }
 
-.admin-content h1 {
-  font-size: 30px;
-}
-
 .modify {
   font-size: medium;
   padding: 1px;
+}
+
+/* Product list */
+img{
+  margin: 1rem 0 1rem 0;
+  width: 5rem;
+  height: auto;
+  object-fit: cover;
+  align-items: center;
 }

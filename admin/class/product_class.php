@@ -38,14 +38,43 @@ class Product {
     }
 
     public function showProduct() {
-        $query = "SELECT tbl_product. *, tbl_category.category_name, tbl_brand.brand_name
-        FROM tbl_product AS p 
-        INNER JOIN tbl_category AS c ON p.category_id = c.categor   y_id 
-        INNER JOIN tbl_brand AS b ON p.brand_id = b.brand_id 
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
         ORDER BY product_id";
         $result = $this -> db -> select($query);
         return $result;
     }
+
+    public function getProduct($productId) {
+        $query = "SELECT * from tbl_product WHERE product_id = '$productId'";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
+    public function updateProduct() {
+        $productId = $_GET['product_id'];
+        $categoryId = $_POST['categoryId'];
+        $brandId = $_POST['brandId'];
+        $productName = $_POST['productName'];
+        $productPrice = $_POST['productPrice'];
+        $productDesc = $_POST['productDesc'];
+        $productImg = $_FILES['productImg']['name'];
+
+        $query = "UPDATE tbl_product 
+            SET category_id = '$categoryId',
+            brand_id = '$brandId',
+            product_name = '$productName',
+            product_price = '$productPrice',
+            product_desc = '$productDesc',
+            product_img = '$productImg'
+            WHERE product_id = '$productId'";
+        $update = $this-> db -> update($query);
+        header("Location:productlist.php");
+        return $update;
+    }
+
 
     public function showCategory() {
         $query = "SELECT * from tbl_category ORDER BY category_id";
@@ -61,21 +90,14 @@ class Product {
         return $result;
     }
 
-    public function getBrand($brandId) {
-        $query = "SELECT * from tbl_brand    WHERE brand_id = '$brandId'";
+    public function showBrandByCategory($categoryId) {
+        $query = "SELECT * FROM tbl_brand WHERE category_id ='$categoryId'";
         $result = $this -> db -> select($query);
         return $result;
     }
 
-    public function updateBrand($categoryId, $brandName, $brandId) {
-        $query = "UPDATE tbl_brand SET brand_name = '$brandName', category_id = '$categoryId' WHERE brand_id = '$brandId'";
-        $result = $this-> db -> update($query);
-        header("Location:brandlist.php");
-        return $result;
-    }
-
-    public function deleteBrand($brandId) {
-        $query = "DELETE FROM tbl_brand WHERE brand_id = '$brandId'";
+    public function deleteProduct($productId) {
+        $query = "DELETE FROM tbl_product WHERE product_id = '$productId'";
         $result = $this -> db -> delete($query);
         return $result;
     }

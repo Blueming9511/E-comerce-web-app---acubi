@@ -2,20 +2,21 @@
     <div class="left">
     
       <ul> 
-        <li><a href="">Danh mục</a></li>
+        <li><a href="">Category</a></li>
             <ul>
-              <li><a href="categoryadd.php">Thêm danh mục</a></li>
-              <li><a href="categorylist.php">Danh sách danh mục</a></li>
+              <li><a href="categoryadd.php">Category Add</a></li>
+              <li><a href="categorylist.php">Categories List</a></li>
             </ul>
-        <li><a href="">Loại sản phẩm</a></li>
+
+        <li><a href="">Brand</a></li>
           <ul>
-            <li><a href="brandadd.php">Thêm loại sản phẩm</a></li>
-            <li><a href="brandlist.php">Danh sách loại sản phẩm</a></li>
+            <li><a href="brandadd.php">Brand Add</a></li>
+            <li><a href="brandlist.php">Brands List</a></li>
           </ul>
-        <li><a href="">Sản phẩm</a></li>
+        <li><a href="">Product</a></li>
         <ul>
-          <li><a href="productadd.php">Thêm sản phẩm</a></li>
-          <li><a href="productlist.php">Danh sách sản phẩm</a></li>
+          <li><a href="productadd.php">Product Add</a></li>
+          <li><a href="productlist.php">Product List</a></li>
         </ul>
       </ul>
     </div>

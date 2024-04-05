@@ -7,14 +7,10 @@ include "class/product_class.php";
 <?php
 $product = new Product;
 $showProduct = $product->showProduct();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $categoryName = $_POST['categoryName'];
-  $insert = $category->insertCategory($categoryName);
-}
 ?>
 
 <div class="right">
-      <div class="list">
+      <div class="product list">
         <h1>PRODUCTS LIST</h1>
         <table>
             <tr>
@@ -31,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php
             if ($showProduct) { 
                 $i = 0;
-                while($result = $showbrand->fetch_assoc()) {
+                while($result = $showProduct->fetch_assoc()) {
                     $i++;
             ?>
             <tr>
@@ -42,14 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <td><?php echo $result['product_name']?></td>
                 <td><?php echo $result['product_price']?></td>
                 <td><?php echo $result['product_desc']?></td>
-                <td><?php echo $result['product_img']?></td>
+                <td><img src="uploads/<?php echo $result['product_img']?>"></td>
                 <td>
-                    <a  href="brandedit.php?brand_id=<?php echo $result['product_id'] ?>" >
+                    <a  href="productedit.php?product_id=<?php echo $result['product_id'] ?>" >
                     Sửa
                     </a> 
                     |
 
-                    <a href="branddelete.php?brand_id= <?php echo $result['product_id'] ?>">
+                    <a href="productdelete.php?product_id= <?php echo $result['product_id'] ?>">
                         Xóa
                     </a>
                 </td>

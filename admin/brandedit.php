@@ -16,7 +16,6 @@ include "class/brand_class.php"
         $categoryId = $_POST['categoryId'];
         $brandName = $_POST['brandName'];
         $update = $brand->updateBrand($categoryId, $brandName, $brandId);
-        var_dump($brandName);
     }
 ?>
 
