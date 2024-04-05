@@ -400,3 +400,12 @@ form.sign-in-form {
     left: 50%;
   }
 }
+
+
+/* SIGN IN FORM */
+
+.errorMessageSI1, .errorMessageSI2, .errorMessageSU1, .errorMessageSU2, .errorMessageSU3{
+  color: #d9212c;
+  font-size: smaller;
+  display: none;
+}

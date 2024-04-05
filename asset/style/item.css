@@ -40,3 +40,153 @@
   top: 3px;
   margin-left: 5px;
 }
+
+.shop-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shop-field > .item {
+  max-width: 300px;
+  margin: 10px;
+  min-width: min-content;
+}
+
+.image #zoom-In figure img {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.232);
+  height: auto;
+  cursor: pointer;
+  transition: var(--transition-3);
+}
+
+.shop-field {
+  background-color: rgba(211, 211, 211, 0.344);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 1em;
+}
+
+figure {
+  overflow: hidden;
+  margin: 0 10px;
+}
+.image #zoom-In figure img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.image #zoom-In figure:hover img {
+  transform: scale(1.5);
+}
+
+/*       <div class="products-preview">
+
+            <div class="preview" data-target="1">
+                <div class="image">
+                    <img src="asset/image/SHOP-IMG/i1.jpg" alt="">
+                </div>
+                <div class="pro-info">
+                    <i class="fas fa-times"></i>
+                    <h3>organic strawberries</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+                    <div class="price">$2.00</div>
+                    <div class="buttons">
+                        <a href="#" class="cart">add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>*/
+
+/* item preview */
+
+.products-preview {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.408);
+}
+.products-preview.active {
+  display: flex;
+}
+
+.products-preview .preview {
+  display: none;
+  background: #fff;
+  position: relative;
+  margin: 2rem;
+  max-width: 30em;
+
+  padding: 1EM;
+  padding-bottom: 0;
+  height: fit-content;
+}
+
+
+.preview img {
+  width: 100%;
+}
+
+.preview .pro-info {
+  margin: 1em;
+}
+.preview .pro-info > * {
+  margin: 1em 0;
+}
+
+.preview .pro-info .buttons .cart {
+  color: white;
+  padding: 10px;
+  background-color: black;
+}
+.preview .pro-info .buttons .cart:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+}
+.products-preview .preview.active{
+  display: flex;
+}
+.fas {
+  position: absolute;
+  right: 1em;
+  top: 0em;
+  cursor: pointer;
+}
+
+/* active */
+
+@media (max-width: 400px) {
+  .preview {
+    max-width: 3em;
+    flex-direction: column;
+    height: auto;
+  }
+  .preview img{
+    width: 100%;
+  }
+
+  .fas {
+    position: absolute;
+    right: 1em;
+    top: 26em;
+    cursor: pointer;
+  }
+  .preview a {
+    font-weight: bold;
+  }
+  .preview .pro-info {
+    margin: 0em 1em;
+    margin-top: 1em;
+  }
+}
+

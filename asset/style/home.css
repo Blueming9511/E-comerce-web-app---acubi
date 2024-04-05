@@ -69,7 +69,7 @@
 }
 
 
-.bestSeller-shop-field{
+.shop-field{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -77,13 +77,13 @@
 }
 
 
-.bestSeller-shop-field > .item {
+.shop-field > .item {
   max-width: 300px;
   margin: 10px;
   min-width: min-content;
 }
 
-.bestSeller-shop-field .item  img {
+.shop-field .item  img {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.232);
   height: auto;
