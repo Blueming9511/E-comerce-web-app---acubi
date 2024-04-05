@@ -1,12 +1,21 @@
 <?php
 include 'header.php';
 include 'sidebar.php';
+include 'class/product_class.php';
+?>
+
+<?php
+$product = new Product;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $insert = $product->insertProduct($_POST, $_FILES);
+}
+
 ?>
 
 
 <div class="right">
       <div class="product add">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td colspan="2"><h1>PRODUCT ADD</h1></td>
@@ -22,15 +31,36 @@ include 'sidebar.php';
 
                 <tr>
                     <td>
-                        <select name="category" id="">
-                            <option value="#"></option>
-                            <option value="">1</option>
-                          </select>                    </td>
+                        <select name="categoryId" id="" required>
+                            <?php
+                                $showCategory = $product -> showCategory();
+                                if ($showCategory) {
+                                    while ($result = $showCategory -> fetch_assoc()) {
+                                ?>
+                            <option value="<?php echo $result['category_id'] ?>"> 
+                            <?php echo $result['category_name']?> </option>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </select>                   
+                    </td>
+
                     <td>
-                        <select name="brand" id="">
-                            <option value="#"></option>
-                            <option value="">1</option>
-                          </select>                    </td>
+                        <select name="brandId" id="" required>
+                            <?php
+                                $showBrand = $product -> showBrand();
+                                if ($showBrand) {
+                                    while ($resultBrand = $showBrand -> fetch_assoc()) {
+                                ?>
+                            <option value="<?php echo $resultBrand['brand_id'] ?>"> 
+                            <?php echo $resultBrand['brand_name']?> </option>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </select>                    
+                        </td>
                 </tr>
 
                 <tr>
@@ -45,11 +75,11 @@ include 'sidebar.php';
 
                 <tr>
                     <td>
-                        <input type="text" name="productName" id="">
+                        <input required ="text" name="productName" id="">
                     </td>
                     <td>
                         
-                        <input type="text" name="productPrice" id="">
+                        <input required ="text" name="productPrice" id="">
                         <span class="money"> $ </span>
                     </td>
                 </tr>
@@ -74,7 +104,7 @@ include 'sidebar.php';
 
                 <tr>
                     <td>
-                        <input multiple type="file" name="" id="">
+                        <input required multiple type="file" name="productImg" id="" accept="image/png, image/jpeg, image/pdf">
                     </td>
                 </tr>
             </table>
