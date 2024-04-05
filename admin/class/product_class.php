@@ -3,17 +3,17 @@
 ?>
 
 <?php
-class Brand {
+class Product {
     private $db;
 
     public function __construct() {
         $this -> db = new Database();
     }
 
-    public function insertBrand($categoryId, $brandName) {
-        $query = "INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$categoryId', '$brandName')";
+    public function insertProduct($categoryId, $brandId, $productName, $productPrice, $productDesc, $productImg) {
+        $query = "INSERT INTO tbl_product (category_id, product_name) VALUES ('$categoryId', '$productName')";
         $result = $this -> db -> insert($query);
-        header("Location:brandlist.php");
+        header("Location:productlist.php");
         return $result;
     }
 
