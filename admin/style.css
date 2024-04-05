@@ -1,171 +1,188 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: black;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  outline: none;
+  font-family: "Poppin", sans-serif;
 }
 
 h1 {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 
 a {
-    font-size: 1.5rem;
-    text-decoration: none;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 select {
-    width: 20rem;
-    height: 2rem;
-    background: white;
-    border: 0.5px solid;
+  width: 20rem;
+  height: 2rem;
+  background: white;
+  border: 0.5px solid;
 }
 
 header {
-    height: 6rem;
-    width: 100vw;
-    border-bottom: 2px solid #ddd;
-    text-align: center;
+  height: 6rem;
+  width: 100vw;
+  border-bottom: 2px solid #ddd;
+  text-align: center;
 }
 
 .admin-content {
-    padding-top: 2rem;
-    display: flex;
+  padding-top: 2rem;
+  display: flex;
 }
 
 .admin-content .left {
-    background: #dddd;
-    width: 20%;
-    height: 100vh;
-    padding: 2rem 0 0 1rem;
+  background: #dddd;
+  width: fit-content;
+  height: 100vh;
+  padding: 0 1em;
+  /* padding: 2rem 0 0 1rem; */
 }
 
 .admin-content .left > ul > li > a {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .admin-content .left ul li {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .admin-content .left ul ul {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .admin-content .right {
-    width: 80%;
-    padding: 0rem 0 0rem 2rem;
-    font-family: 'Poppins';
+  width: 80%;
+  padding: 0rem 0 0rem 2rem;
+  font-family: "Poppins";
 }
 
-.admin-content .add input{
-    height: 2rem;
-    width: 20rem;
-    padding-left: 1rem;
-    margin-top: 1rem;
+.admin-content .add input {
+  height: 2rem;
+  width: 20rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
 }
 
-.admin-content .add button{
-    display: block;
-    margin-top: 2rem;
-    height: 2.5rem;
-    width: 8rem;
-    cursor: pointer;
-    border: none;
+.admin-content .add button {
+  display: block;
+  margin-top: 2rem;
+  height: 2.5rem;
+  width: 8rem;
+  cursor: pointer;
+  border: none;
 }
 
-.admin-content .add button:hover{
-    background: tomato;
-    color: white;
-    transition: .3s;
+.admin-content .add button:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+  border-color: black;
+  transition: 0.3s;
 }
 
-.admin-content .add button:focus{
-    border: 2px solid rgb(133, 41, 24);
-    border-radius: .3rem;
+.admin-content .add button:focus {
+  border: 2px solid rgb(133, 41, 24);
+  border-radius: 0.3rem;
 }
 
 /* ----------list-------------- */
 .admin-content .right .list {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 .admin-content .right .list table {
-    width: 100%;
-    text-align: center;
-    margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.admin-content .right .list table, tr, th, td {
-    border: 1px solid;
-    border-collapse: collapse;
-
+.admin-content .right .list table,
+tr,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
 }
 
 /* ----------Product-------------- */
 .admin-content .right .product h1 {
-    text-align: center;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 1em;
+}
+
+.product-table td {
+  border: none;
 }
 
 .admin-content .right .product table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.admin-content .right .product table, td, tr {
-    border: none;
-    border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .admin-content .right .product td {
-    padding: 0 2rem 0 2rem;
+  padding: 0 2rem 0 2rem;
 }
 
-.admin-content .right .product input, select, textarea{
-    display: inline-block;
-    width: 30rem;
-    height: 3rem;
-    margin: 1rem 0 2rem 0;
-    font-size: 1rem;
+.admin-content .right .product input,
+select,
+textarea {
+  display: inline-block;
+  width: 30rem;
+  height: 3rem;
+  margin: 1rem 0 2rem 0;
+  font-size: 1rem;
 }
 
 .admin-content .right .product select {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .admin-content .right .product textarea {
-    padding: 1rem;
-    height: 20rem;
-    width: 100%;
+  padding: 1rem;
+  height: 10rem;
+  width: 100%;
 }
 
-.admin-content .right .product input[name='productPrice'] {
-    width: 30%;
-    margin-right: 0;
+.admin-content .right .product input[name="productPrice"] {
+  width: 30%;
+  margin-right: 0;
 }
 
 span.money {
-    padding-left: 1rem;
-    font-size: 1.2rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
 }
 
-.admin-content .right .product input[type = 'file'] {
-    padding: 0;
+.admin-content .right .product input[type="file"] {
+  padding: 0;
 }
 
 .admin-content .right .product label {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .admin-content .right .product button {
-    margin: auto;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    height: 5rem;
-    width: 20%;
+  margin: auto;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 5rem;
+  width: 20%;
+}
+
+.admin-content h1 {
+  font-size: 30px;
+}
+
+.modify {
+  font-size: medium;
+  padding: 1px;
 }
