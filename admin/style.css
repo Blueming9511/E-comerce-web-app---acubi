@@ -19,6 +19,13 @@ ul {
     list-style: none;
 }
 
+select {
+    width: 20rem;
+    height: 2rem;
+    background: white;
+    border: 0.5px solid;
+}
+
 header {
     height: 6rem;
     width: 100vw;
@@ -81,3 +88,20 @@ header {
     border: 2px solid rgb(133, 41, 24);
     border-radius: .3rem;
 }
+
+/* ----------list-------------- */
+.admin-content .right .list {
+    margin-right: 2rem;
+}
+.admin-content .right .list table {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.admin-content .right .list table, tr, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+
+}
+
