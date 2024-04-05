@@ -30,15 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="right">
-  <div class="category add">
-    <h1>Thêm danh mục</h1>
-    <form action="" method="POST">
-      <input type="text" name="categoryName" id="" placeholder="Nhập tên sản phẩm"
-      value = "<?php echo $result['category_name'] ?>"
-      require>
-      <button type="submit">Sửa</button>
-    </form>
-  </div>
+    <div class="category add">
+        <h1>Thêm danh mục</h1>
+        <form action="" method="POST">
+            <input type="text" name="categoryName" id="" placeholder="Nhập tên sản phẩm"
+                value="<?php echo $result['category_name'] ?>" require>
+            <button type="submit">Sửa</button>
+        </form>
+    </div>
 </div>
 </section>
 </body>
