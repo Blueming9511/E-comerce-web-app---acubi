@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tr>
                     <td>
                         <select name="categoryId" id="categorySelect" required>
+                            <option value="#"></option>
                             <?php
                                 $showCategory = $product -> showCategory();
                                 if ($showCategory) {
@@ -62,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <td>
                         <select name="brandId" id="brandSelect" required>
+                            <option value="#"></option>
                             <?php
                                 $showBrand = $product -> showBrand();
                                 if ($showBrand) {

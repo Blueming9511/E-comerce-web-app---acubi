@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="right">
   <div class="category add">
-    <h1>Thêm loại sản phẩm</h1> <br>
+    <h1>BRAND ADD</h1> <br>
     <form action="" method="POST">
         <select name="categoryId" id="">
-            <option value="#">Chọn danh mục</option>
+            <option value="#" disabled> BRAND SELECT</option>
             <?php
             $show = $brand -> showCategory();
             if ($show) {
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ?>
         </select> <br>
       <input type="text" name="brandName" id="" placeholder="Nhập loại sản phẩm" require>
-      <button type="submit">Thêm</button>
+      <button type="submit">Add</button>
     </form>
   </div>
 </div>
