@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="product-table">
                 <tr>
-                    <td colspan="2"><h1>PRODUCT ADD</h1></td>
+                    <td colspan="2"><h1>ADD PRODUCT </h1></td>
                 </tr>
                 <tr>
                     <td>
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </tr>
             </table>
           
-          <button type="submit">Add</button>
+          <button  type="submit">Add</button>
         </form>
       </div>
     </div>

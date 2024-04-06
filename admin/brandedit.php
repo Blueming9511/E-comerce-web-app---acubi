@@ -21,10 +21,10 @@ include "class/brand_class.php"
 
 <div class="right">
   <div class="category add">
-    <h1>Thêm loại sản phẩm</h1> <br>
+    <h1>Add product type</h1> <br>
     <form action="" method="POST">
         <select name="categoryId" id="">
-            <option value="#">Chọn danh mục</option>
+            <option value="#">Choose category</option>
             <?php
             $show = $brand -> showCategory();
             if ($show) {
@@ -37,10 +37,10 @@ include "class/brand_class.php"
             }
             ?>
         </select> <br>
-      <input type="text" name="brandName" id="" placeholder="Nhập loại sản phẩm" 
+      <input type="text" name="brandName" id="" placeholder="Enter product type" 
         value = "<?php echo $resultBrand['brand_name'] ?>"
       require>
-      <button type="submit">Sửa</button>
+      <button type="submit">Edit</button>
     </form>
   </div>
 </div>

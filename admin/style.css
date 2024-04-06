@@ -5,6 +5,14 @@
   color: black;
   outline: none;
 }
+.btn {
+  background: transparent;
+  padding: .5rem;
+  font-size: .8rem;
+  border: 1px solid;
+  border-radius: 10%;
+  width: 2rem;
+}
 
 a {
   font-size: 1.5rem;
@@ -26,11 +34,13 @@ header {
   height: 6rem;
   width: 100vw;
   border-bottom: 2px solid #ddd;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .admin-content {
-  padding-top: 2rem;
   display: flex;
 }
 
@@ -38,7 +48,7 @@ header {
   background: #dddd;
   width: fit-content;
   height: 100vh;
-  padding: 0 1em;
+  padding: 0 2rem 0 2rem;
 }
 
 .admin-content .left > ul > li > a {
@@ -54,7 +64,7 @@ header {
 }
 
 .admin-content .right {
-  width: 80%;
+  margin-left: 2rem;
   font-family: "Poppins";
   display: flex;
   justify-content: center;
@@ -73,7 +83,9 @@ header {
   width: 10rem;
   cursor: pointer;
   border: none;
+
 }
+
 
 .admin-content .add button:hover {
   background: rgb(0, 0, 0);
@@ -87,11 +99,11 @@ header {
   border-radius: 0.3rem;
 }
 
-.admin-content .right{
+.admin-content .right {
   font-family: "Poppins";
 }
 
-.admin-content .right h1{
+.admin-content .right h1 {
   text-align: left;
   font-size: 4rem;
 }
@@ -100,7 +112,6 @@ header {
   padding-left: 1rem;
 }
 
-
 /* ----------Category list-------------- */
 .admin-content .right .list {
   display: flex;
@@ -108,28 +119,42 @@ header {
 }
 .right table {
   border-collapse: collapse;
+  width: 100%;  
 }
 
-.right th, td {
+.right table tr {
+  border-bottom: 1px solid;
+}
+
+.right table th, tr,
+td {
   padding: 1rem 5rem 1rem 0;
-  border-bottom: 1px solid;
+  border: none;
+  align-items: center;
+
 }
 
-.right table {
-  border-bottom: 1px solid;
+.right table td:nth-last-child(2) {
+  padding-right: .5rem;
 }
 
+.btn:hover{
+  color: white;
+  background: #000;
+  transition: .3s all;
+}
 
 /* ----------Product-------------- */
 .admin-content .right .product.add table {
   border-bottom: none;
 }
 
-.admin-content .right .product.add table th, td {
-  padding: 0rem 2rem 1rem 0;
+.admin-content .right .product.add table th,
+td {
+  padding-right: 2em;
 }
 
-.admin-content .right .product.add table tr:nth-child(2n) td{
+.admin-content .right .product.add table tr:nth-child(2n) td {
   padding-bottom: 0;
 }
 
@@ -139,7 +164,7 @@ textarea {
   display: inline-block;
   width: 20rem;
   height: 4rem;
-  margin: 0rem 0 .5rem 0;
+  margin: 0rem 0 0.5rem 0;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -186,7 +211,7 @@ span.money {
 }
 
 /* Product list */
-img{
+img {
   margin: 1rem 0 1rem 0;
   width: 5rem;
   height: auto;
@@ -194,10 +219,17 @@ img{
   align-items: center;
 }
 
-.product.add table tr, td,th {
+.product.add table tr,
+td,
+th {
   border: none;
 }
 
 .product.add tr {
   padding: 0;
 }
+
+.product.list table td:nth-last-child(2) {
+  padding-right: .5rem;
+}
+

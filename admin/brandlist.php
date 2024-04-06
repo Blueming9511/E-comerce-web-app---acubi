@@ -14,45 +14,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="right">
-      <div class="list">
-        <h1>BRANDS LIST</h1>
-        <table>
-            <tr>
-                <th>No.</th>
-                <th>ID</th>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Action</th>
-            </tr>
-            <?php
-            if ($showbrand) { 
-                $i = 0;
-                while($result = $showbrand->fetch_assoc()) {
-                    $i++;
-            ?>
-            <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $result['brand_id']?></td>
-                <td><?php echo $result['category_name']?></td>
-                <td><?php echo $result['brand_name']?></td>
-                <td>
-                    <a  href="brandedit.php?brand_id=<?php echo $result['brand_id'] ?>" >
-                    Sửa
-                    </a> 
-                    |
+  <div class="list">
+    <h1>BRANDS LIST</h1>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <?php
+      if ($showbrand) {
+        $i = 0;
+        while ($result = $showbrand->fetch_assoc()) {
+          $i++;
+      ?>
+          <tr>
+            <td><?php echo $i ?></td>
+            <td><?php echo $result['brand_id'] ?></td>
+            <td><?php echo $result['category_name'] ?></td>
+            <td><?php echo $result['brand_name'] ?></td>
+            <td>
+              <a class="btn" href="brandedit.php?brand_id=<?php echo $result['brand_id'] ?>">
+                Edit
+              </a>
+            </td>
+            <td> <a class="btn" href="branddelete.php?brand_id= <?php echo $result['brand_id'] ?>">
+                Delete
+              </a></td>
 
-                    <a href="branddelete.php?brand_id= <?php echo $result['brand_id'] ?>">
-                        Xóa
-                    </a>
-                </td>
-            </tr>
-            <?php
-                }
-            }
-            ?>
-        </table>
-      </div>
-    </div>
-  </section>
+
+          </tr>
+      <?php
+        }
+      }
+      ?>
+    </table>
+  </div>
+</div>
+</section>
 </body>
+
 </html>
