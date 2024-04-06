@@ -20,9 +20,10 @@ include "class/brand_class.php"
 ?>
 
 <div class="right">
-  <div class="category add">
-    <h1>Add product type</h1> <br>
+  <div class="category-add">
+    <h1>ADD TYPE</h1> <br>
     <form action="" method="POST">
+      <label for="categoryId">Choose category <span style="color: tomato;">*</span></label><br>
         <select name="categoryId" id="">
             <option value="#">Choose category</option>
             <?php
@@ -37,6 +38,7 @@ include "class/brand_class.php"
             }
             ?>
         </select> <br>
+      <label for="brandName">Enter product type <span style="color: tomato;">*</span></label><br>
       <input type="text" name="brandName" id="" placeholder="Enter product type" 
         value = "<?php echo $resultBrand['brand_name'] ?>"
       require>

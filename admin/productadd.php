@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="right">
       <div class="product add">
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="product-table">
+            <table class="product-add">
                 <tr>
                     <td colspan="2"><h1>ADD PRODUCT</h1></td>
                 </tr>
