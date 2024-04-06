@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="right">
       <div class="list">
-        <h1>Danh sách danh mục</h1>
+        <h1>CATEGORIES LIST</h1>
         <table>
             <tr>
                 <th>No.</th>

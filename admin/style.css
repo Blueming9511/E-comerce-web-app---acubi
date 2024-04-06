@@ -55,8 +55,9 @@ header {
 
 .admin-content .right {
   width: 80%;
-  padding: 0rem 0 0rem 2rem;
   font-family: "Poppins";
+  display: flex;
+  justify-content: center;
 }
 
 .admin-content .add input {
@@ -102,7 +103,8 @@ header {
 
 /* ----------Category list-------------- */
 .admin-content .right .list {
-  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 .right table {
   border-collapse: collapse;
