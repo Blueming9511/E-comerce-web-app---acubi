@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="right">
-  <div class="list">
+  <div class="category-list">
     <h1>CATEGORIES LIST</h1>
     <table>
       <tr>

@@ -30,9 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="right">
-    <div class="category add">
+    <div class="category-add">
         <h1>Add Category</h1>
         <form action="" method="POST">
+            <label for="categoryName">Enter category <span style="color: tomato;">*</span></label><br>
             <input type="text" name="categoryName" id="" placeholder=""
                 value="<?php echo $result['category_name'] ?>" require>
             <button  type="submit">Edit</button>

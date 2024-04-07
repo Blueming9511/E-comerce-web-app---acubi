@@ -16,9 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="right">
-  <div class="category add">
-    <h1>ADD BRANDS</h1> <br>
+  <div class="category-add">
+    <h1>ADD TYPE</h1> <br>
     <form action="" method="POST">
+        <label for="categoryId">Choose category <span style="color: tomato;">*</span></label><br>
         <select name="categoryId" id="" required>
             <option value="#" disabled> BRAND SELECT</option>
             <?php
@@ -32,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             ?>
         </select> <br>
-      <input type="text" name="brandName" id="" placeholder="Enter product type" required>
+        <label for="brandName">Enter product type <span style="color: tomato;">*</span></label><br>
+      <input type="text" name="brandName" id="" required>
       <button type="submit">Add</button>
     </form>
   </div>

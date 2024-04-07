@@ -162,8 +162,8 @@
 
                 <div class="categories">
 
-                    <a href="top.html" class="category top"> <img src="asset/shop/img/top.png" alt="" srcset=""></a>
-                    <a href="bottom.html" class="category bottom"> <img src="asset/shop/img/bottom.png" alt="" srcset=""></a>
+                    <a href="top.php" class="category top"> <img src="asset/shop/img/top.png" alt="" srcset=""></a>
+                    <a href="bottom.php" class="category bottom"> <img src="asset/shop/img/bottom.png" alt="" srcset=""></a>
 
                 </div>
             </div>

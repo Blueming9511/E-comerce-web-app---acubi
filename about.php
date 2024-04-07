@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -214,6 +215,14 @@
 
 
 <!-- <div id="carousel" >
+=======
+<?php
+include 'header.php';
+include 'footer.php';
+?>
+
+<div id="carousel" >
+>>>>>>> 23c9becd0bfacb180170b5b0b27e2116e7956e2a
                 <div class="shopping-card flex-center" >
                         <div class="outer" style="border: 1px solid;">
                             <div class="content animated fadeInLeft">
@@ -274,4 +283,8 @@
                             <img src="https://bit.ly/2kOzUTm" width="300px" class="animated fadeInRight">
                         </div>
                 </div>
+<<<<<<< HEAD
             </div> -->
+=======
+            </div>
+>>>>>>> 23c9becd0bfacb180170b5b0b27e2116e7956e2a

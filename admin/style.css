@@ -5,6 +5,7 @@
   color: black;
   outline: none;
 }
+
 .btn {
   background: transparent;
   padding: .5rem;
@@ -46,7 +47,7 @@ header {
 
 .admin-content .left {
   background: #dddd;
-  width: fit-content;
+  width: 20%;
   height: 100vh;
   padding: 0 2rem 0 2rem;
 }
@@ -70,14 +71,21 @@ header {
   justify-content: center;
 }
 
-.admin-content .add input {
+.category-add input {
   height: 4rem;
   width: 20rem;
   padding-left: 1rem;
   margin: 1rem 0 2rem 0;
 }
 
-.admin-content .add button {
+.category-add select {
+  height: 4rem;
+  width: 20rem;
+  padding-left: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.admin-content .category-add button {
   display: block;
   height: 3rem;
   width: 10rem;
@@ -87,54 +95,75 @@ header {
 }
 
 
-.admin-content .add button:hover {
+.category-add button:hover {
   background: rgb(0, 0, 0);
   color: white;
   border-color: black;
   transition: 0.3s;
 }
 
-.admin-content .add button:focus {
+.category-add button:focus {
   border: 2px solid rgb(133, 41, 24);
   border-radius: 0.3rem;
 }
 
-.admin-content .right {
+.right {
   font-family: "Poppins";
 }
 
-.admin-content .right h1 {
+.right h1 {
   text-align: left;
   font-size: 4rem;
 }
 
-.admin-content .right option {
+.right option {
   padding-left: 1rem;
 }
 
 /* ----------Category list-------------- */
-.admin-content .right .list {
+.right {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+.category-list{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.right table {
-  border-collapse: collapse;
-  width: 100%;  
+.category-list table {
+  border-collapse: collapse;  
+  display: flex;
+  justify-content: center;
 }
 
-.right table tr {
+.category-list h1 {
+  justify-content: start;
+}
+
+.category-list table tr {
   border-bottom: 1px solid;
 }
 
-.right table th, tr,
-td {
+.category-list td, 
+.category-list th {
   padding: 1rem 5rem 1rem 0;
   border: none;
   align-items: center;
-
 }
 
-.right table td:nth-last-child(2) {
+.category-list th:nth-last-child(1) {
+  text-align: left;
+}
+
+.category-list th:nth-child(1),
+.category-list td:nth-child(1) {
+  padding-left: 5rem;
+  text-align: left;
+}
+
+
+.category-list table td:nth-last-child(2) {
   padding-right: .5rem;
 }
 
@@ -145,22 +174,22 @@ td {
 }
 
 /* ----------Product-------------- */
-.admin-content .right .product.add table {
+.product-add table {
   border-bottom: none;
 }
 
-.admin-content .right .product.add table th,
-td {
+.product-add th,
+.product-add td {
   padding-right: 2em;
 }
 
-.admin-content .right .product.add table tr:nth-child(2n) td {
+.product-add tr:nth-child(2n) td {
   padding-bottom: 0;
 }
 
-.admin-content .right .product input,
-select,
-textarea {
+.product-add input,
+.product-add select,
+.product-add textarea {
   display: inline-block;
   width: 20rem;
   height: 4rem;
@@ -169,17 +198,17 @@ textarea {
   padding: 1rem;
 }
 
-.admin-content .right .product select {
+.product-add select {
   padding-left: 1rem;
 }
 
-.admin-content .right .product textarea {
+.product-add textarea {
   padding: 1rem;
   height: 10rem;
   width: 100%;
 }
 
-.admin-content .right .product input[name="productPrice"] {
+.product-add input[name="productPrice"] {
   width: 30%;
   margin-right: 0;
 }
@@ -189,15 +218,15 @@ span.money {
   font-size: 1.2rem;
 }
 
-.admin-content .right .product input[type="file"] {
+.product-add input[type="file"] {
   padding: 0;
 }
 
-.admin-content .right .product label {
+.product-add label {
   font-size: 1.2rem;
 }
 
-.admin-content .right .product button {
+.product-add button {
   margin-bottom: 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -212,24 +241,47 @@ span.money {
 
 /* Product list */
 img {
-  margin: 1rem 0 1rem 0;
-  width: 5rem;
+  margin: 1rem 0 1rem .5rem;
+  width: 4rem;
   height: auto;
   object-fit: cover;
   align-items: center;
 }
 
-.product.add table tr,
-td,
-th {
-  border: none;
+.product-list table {
+  border-collapse: collapse;
 }
 
-.product.add tr {
-  padding: 0;
+.product-list tr{
+  border-bottom: 1px solid;
 }
 
-.product.list table td:nth-last-child(2) {
-  padding-right: .5rem;
+.product-list tr, 
+.product-list th, 
+.product-list td {
+  padding: 1rem 3rem 0rem 0;
+}
+
+.product-list th {
+  padding-bottom: 1.5rem;
+}
+
+
+.product-list table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.product-list th:nth-child(7) {
+  float:left;
+}
+
+.product-list td:nth-child(7) {
+  padding:1rem .5rem .5rem 0;
+  float:left;
+  max-width: 20rem;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  height: 9rem;
 }
 
