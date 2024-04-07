@@ -41,6 +41,7 @@ INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
 (1, 1, 'Y2K'),
 (2, 2, 'Y4K');
 
+
 -- --------------------------------------------------------
 
 --

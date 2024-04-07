@@ -1,3 +1,59 @@
+<?php
+function login($username, $password)
+{
+  $conn = create_connection();
+  $sql = 'select * from tbl_user where username=?';
+  $stm = $conn->prepare($sql);
+  $stm->bind_param("s", $username);
+  if (!$stm->execute()) return false;
+
+  $result  = $stm->get_result();
+
+  if ($result->num_rows !== 1) return false;
+
+  $data = $result->fetch_assoc();
+
+  $user_pwd = $data["password"];
+  if ($user_pwd !== $password) return false;
+  return true;
+}
+
+?>
+
+
+<?php
+
+
+session_start();
+
+
+$user = '';
+$pass = '';
+$error = '';
+
+
+
+// Check if username and password are set
+if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
+  $user = $_POST["username_login"];
+  $pass = $_POST["pass_login"];
+
+  // phan quyen admin
+  if ($user === "admin" &&  $pass == "admin123") {
+    header("Location: admin/categorylist.php");
+  } else if (login($user, $pass)) {
+    $_SESSION['user'] = $user;
+    header("Location: index.php");
+  } else {
+    $error = 'Username or Password incorrect!';
+  }
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,23 +69,32 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form novalidate onsubmit="return validateSignIn()" action="#" class="sign-in-form" id="signInForm">
+        <form novalidate onsubmit="return validateSignIn()" class="sign-in-form" id="signInForm" method="post">
+
+          <!-- LOGIN -->
           <h2 class="title">Login</h2>
 
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" id="usernameSI" />
+            <input type="text" placeholder="Username" id="usernameSI" name="username_login" />
           </div>
           <div class="errorMessageSI1"></div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" id="pwdSI" />
+            <input type="password" placeholder="Password" id="pwdSI" name="pass_login" />
           </div>
           <div class="errorMessageSI2"></div>
+
+          <!-- invalid user or pass here -->
+          <div class="errorMessageSI2"></div> <?php if (!empty($error)) : ?>
+            <div class="errorMessage_Invalid"><?php echo $error; ?></div>
+          <?php endif; ?>
           <input type="submit" value="Login" class="btn solid" />
         </form>
 
-        <form novalidate onsubmit="return validateSignUp()" action="#" class="sign-up-form" id="signUpForm">
+
+        <!-- Sign Up -->
+        <form novalidate onsubmit="return validateSignUp()" class="sign-up-form" id="signUpForm">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -46,8 +111,9 @@
             <input type="password" placeholder="Password" id="pwdSU" />
           </div>
           <div class="errorMessageSU3">ERRORMESSAGE OF PASSWORD</div>
+
           <input type="submit" class="btn" value="Sign up" />
-        
+
         </form>
       </div>
     </div>
@@ -59,7 +125,7 @@
           <p>
             Create an account now!
           </p>
-          <button class="btn transparent" id="sign-up-btn">
+          <button class="btn transparent" id="sign-up-btn" >
             Sign up
           </button>
         </div>
@@ -83,7 +149,7 @@
   <script src="asset/Sliding-Sign-In-Sign-Up-Form-master/Sliding-Sign-In-Sign-Up-Form-master/app.js">
 
   </script>
- 
+
 </body>
 
 </html>
