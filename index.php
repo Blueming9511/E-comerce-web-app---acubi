@@ -2,11 +2,7 @@
     include 'header.php';
 ?>
 
-    <style>
-        .home_page{
-            color: black;
-        }
-    </style>
+
         <main class="header-body flex-center">
 
             <div class="img" style="position: relative;">

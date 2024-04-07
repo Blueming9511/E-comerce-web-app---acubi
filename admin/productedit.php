@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </tr>
             </table>
           
-          <button  type="submit">Add</button>
+          <button type="submit">Add</button>
         </form>
       </div>
     </div>
