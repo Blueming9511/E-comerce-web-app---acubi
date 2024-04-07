@@ -18,6 +18,14 @@ class Shop
         $result = $this->db->select($query);
         return $result;
     }
+
+    public function displayProductsByCaregory($category_name)
+    {
+        $query = "SELECT p.* FROM tbl_product p INNER JOIN tbl_category c ON p.category_id = c.category_id WHERE c.caterogy_name = '$category_name'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
 }
 ?>
 
