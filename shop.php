@@ -41,7 +41,7 @@
             <div class="dropdown" style="display: none;">
                 <button onclick="myFunction()" class="dropbtn"> <box-icon class="bx" name='menu'></box-icon></button>
                 <div id="myDropdown" class="dropdown-content" style="display: none; margin-left: 10px; transition: all 0.4s ease-in-out;">
-                    <a href="">HOME</a>
+                    <a href="index.php">HOME</a>
                     <a href="shop.php" id="current_page">SHOP</a>
                     <a href="orderComplete.php">YOUR ORDER</a>
                     <a href="about.php">ABOUT</a>
@@ -52,7 +52,7 @@
 
             <!-- nav -->
             <nav>
-                <a href="" id="current_page">HOME</a>
+                <a href="index.php" id="current_page">HOME</a>
                 <a href="shop.php">SHOP</a>
                 <a href="orderComplete.php">YOUR ORDER</a>
                 <a href="about.php">ABOUT</a>
