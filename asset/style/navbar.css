@@ -68,18 +68,18 @@ body {
   color: var(--color-primary);
 }
 
-#current_page {
-  color: var(--color-primary);
-}
 .navbar .logo {
   flex: 1;
   text-align: center;
 }
 
+.navbar #home_page{
+  text-decoration: underline;
+}
+
 .navbar .left {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
   gap: 1rem;
 }
 

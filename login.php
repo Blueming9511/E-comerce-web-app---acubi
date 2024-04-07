@@ -1,4 +1,6 @@
+
 <?php
+include 'db.php';
 function login($username, $password)
 {
   $conn = create_connection();

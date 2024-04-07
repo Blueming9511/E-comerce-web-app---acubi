@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 05, 2024 lúc 07:26 PM
+-- Thời gian đã tạo: Th4 07, 2024 lúc 10:49 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -38,9 +38,7 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
-(1, 1, 'Y2K'),
 (2, 2, 'Y4K');
-
 
 -- --------------------------------------------------------
 
@@ -77,6 +75,31 @@ CREATE TABLE `tbl_product` (
   `product_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `user_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `address` varchar(150) NOT NULL,
+  `phonenumber` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `email`, `password`, `username`, `firstname`, `lastname`, `address`, `phonenumber`) VALUES
+(1, 'nguyennguyen8343@gmail.com', '123456', 'itznguyen', 'nguyen', 'ta', 'hcmc', '0329868603'),
+(2, 'hello@gmail.com', 'admin123', 'admin', 'quan tri', 'vien`', 'hn', '0329865703');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -100,6 +123,12 @@ ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Chỉ mục cho bảng `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -113,13 +142,13 @@ ALTER TABLE `tbl_brand`
 -- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
