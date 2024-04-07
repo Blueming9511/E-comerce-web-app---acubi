@@ -1,4 +1,6 @@
-<footer class="footer">
+
+    <!-- ==== FOOOTER ==== -->
+    <footer class="footer">
     <div class="footer__addr">
         <h1 class="footer__logo">Acubi</h1>
 
@@ -33,11 +35,26 @@
         </li>
     </ul>
 
-    <div class="legal">
-        <p>&copy; 2024 Something. All rights reserved.</p>
+    <div class="legal flex-center">
+        <p>&copy; 2024. All rights reserved.</p>
 
-        <div class="legal__links">
-            <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-        </div>
+       
     </div>
 </footer>
+    <!-- ==== js ==== -->
+    <script src="asset/js/addToCart.js"></script>
+    <script src="asset/js/items.js"></script>
+    <script src="asset/js/navbar.js"></script>
+
+    <!-- slider -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="asset/slider/script.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -73,14 +73,11 @@ body {
   text-align: center;
 }
 
-.navbar #home_page{
-  text-decoration: underline;
-}
-
 .navbar .left {
   flex: 1;
   display: flex;
   gap: 1rem;
+  justify-content: end;
 }
 
 .cart {
@@ -226,7 +223,7 @@ body {
   flex: 1;
   overflow: auto;
   width: 100%;
-  height: 65vh;
+  height: 57vh;
 }
 
 .cart-title ~ * {

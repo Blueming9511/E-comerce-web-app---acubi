@@ -1,57 +1,12 @@
-
-<?php
-    include 'login_sucess.php';
+<?php 
+    include 'header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-
-    <!-- boxicon -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-
-    <!-- css -->
-    <link rel="stylesheet" href="asset/style/navbar.css">
-    <link rel="stylesheet" href="asset/style/root.css">
-    <link rel="stylesheet" href="asset/style/home.css">
-    <!-- <link rel="stylesheet" href="asset/style/ProductCard.css"> -->
-    <link rel="stylesheet" href="asset/slider/slider.css">
-    <script defer src="asset/slider/script.js"></script>
-    <link rel="stylesheet" href="asset/style/item.css">
-    <!-- js -->
-
-
-    <!-- slider -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="asset/slider/style.css">
-
-
-    <!-- footer -->
-    <link rel="stylesheet" href="asset/footer/style.css">
-
-    <script src="asset/json/getProduct.js"></script>
 
     <style>
         .home_page{
             color: black;
         }
     </style>
-
-</head>
-
-<body>
-    <div class="header-wrapper">
-
-        <?php
-            include 'header.php';
-        ?>
-
         <main class="header-body flex-center">
 
             <div class="img" style="position: relative;">
@@ -273,24 +228,6 @@
     </div>
 
 
-
-
-    <!-- ==== FOOOTER ==== -->
-
-    <!-- ==== js ==== -->
-    <script src="asset/js/addToCart.js"></script>
-    <!-- navbar -->
-    <script src="asset/js/navbar.js"></script>
-
-    <!-- slider -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="asset/slider/script.js"></script>
-
-
-
-
-</body>
-
-</html>
+<?php 
+    include 'footer.php';
+?>
