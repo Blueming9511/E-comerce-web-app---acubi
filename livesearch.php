@@ -22,7 +22,7 @@ if (strlen($q) > 0) {
         if (strpos($name, $q) !== false) {
             // Construct the HTML link for each product
             $response .= "<tr>
-                            <td class=\"name\"><a href='productDetails.php?name=$name'>$name</a></td>
+                            <td class=\"name\"><a href='productDetails.php?id=$id'>$name</a></td>
                             <td rowspan=\"2\" class=\"img\"><a href='productDetails.php?id=$id'><img src='$img' alt='$name'></a></td>
                         </tr>
                         <tr class=\"break-row\">

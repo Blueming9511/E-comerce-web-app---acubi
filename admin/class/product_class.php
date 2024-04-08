@@ -1,5 +1,5 @@
 <?php
-    include "database.php"
+    include "database.php";
 ?>
 
 <?php
@@ -95,6 +95,13 @@ class Product {
         $result = $this -> db -> select($query);
         return $result;
     }
+
+    public function showProductById($productId) {
+        $query = "SELECT * FROM tbl_product WHERE product_id = '$productId'";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
 
     public function deleteProduct($productId) {
         $query = "DELETE FROM tbl_product WHERE product_id = '$productId'";
