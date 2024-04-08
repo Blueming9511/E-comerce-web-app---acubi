@@ -1,6 +1,18 @@
 <?php
 include 'header.php';
 ?>
+
+
+<?php
+    if (isset($_GET['name']) && !empty($_GET['name'])) {
+        // Retrieve and sanitize the product name
+        $name = htmlspecialchars($_GET['name']);
+        var_dump($name);
+    }
+?>  
+
+
+
 </div>
 
 

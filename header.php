@@ -1,5 +1,6 @@
 <?php
 include 'login_sucess.php';
+include 'productlinkgenerate.php';
 ?>
 
 <!DOCTYPE html>
