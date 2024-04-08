@@ -33,19 +33,18 @@ if(isset($_GET['id'])) {
         <div class="product-info">
             <!-- NAME -->
             <div class="product-name">
-            <?php $result['product_name'] ?>
+            <?php echo $result['product_name'] ?>
             </div>
 
             <!-- PRICE -->
             <div class="product-price">
-                $<span class="price"><?php echo $result['product_price'] ?></span>
+                $<span class="price"><?php echo $result['product_price'] ?> </span>
             </div>
 
             <!-- DESCRIPTION -->
             <div class="product-description">
                 <?php echo $result['product_desc'] ?>
             </div>
-            ?>
 
             <!-- ADD TO CART BUTTON -->
             <div class="addToCart">
