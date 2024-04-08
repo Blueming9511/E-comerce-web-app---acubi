@@ -25,6 +25,7 @@ include 'login_sucess.php';
     <link rel="stylesheet" href="asset/style/ProductCard.css">
     <link rel="stylesheet" href="asset/style/shop.css">
     <link rel="stylesheet" href="asset/style/top_bottom.css">
+    <link rel="stylesheet" href="asset/style/productDetails.css">
     <link rel="stylesheet" href="asset/style/order.css">
     <link rel="stylesheet" href="asset/slider/slider.css">
     <script defer src="asset/slider/script.js"></script>

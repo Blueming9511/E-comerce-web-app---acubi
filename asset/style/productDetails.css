@@ -1,0 +1,99 @@
+.product-img {
+    width: 100%;
+
+}
+
+.header-body.productDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-body.productDetails h1{
+    font-family: "Yeseva One", serif;
+}
+
+.productDetails-wrapper {
+    margin: 10px;
+    background-color: rgba(176, 176, 176, 0.37);
+    padding: 1em;
+    max-width: 70em;
+    display: flex;
+    gap: 1em;
+}
+
+.productDetails-wrapper img {
+    width: 100%;
+    min-width: 10em;
+    height: fit-content;
+    border: 1px solid;
+}
+
+
+
+@media screen and (max-width: 570px) {
+    .productDetails-wrapper img {
+        width: 100%;
+        max-width: 100em;
+        height: fit-content;
+    }
+
+    .productDetails-wrapper {
+        flex-direction: column;
+    }
+
+    .addToCart-btn {
+        width: 100% !important;
+    }
+
+    .addToCart {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+.productDetails-wrapper .product-name {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.productDetails-wrapper .product-price {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.productDetails-wrapper .product-description {
+    font-size: 20px;
+}
+
+#addToCart-btn {
+    width: 20em;
+    padding: 1em;
+    margin-top: 1.5em;
+    background-color: white;
+    border: 1px solid;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#addToCart-btn:hover {
+    width: 20em;
+    padding: 1em;
+    margin-top: 1.5em;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.product-info {}
+
+.addToCart {
+    width: 100%;
+}
