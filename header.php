@@ -30,6 +30,8 @@ include 'login_sucess.php';
     <script defer src="asset/slider/script.js"></script>
     <link rel="stylesheet" href="asset/style/item.css">
 
+    <!-- js -->
+    <script src="script_search.js"></script>
 
     <!-- slider -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -129,11 +131,19 @@ include 'login_sucess.php';
 
                 <div class="search-wrapper">
                     <div class="search-input-wrapper">
-                        <input class="search-input" type="search" placeholder="Search for products..." />
+                        <input class="search-input" type="search" placeholder="Search for products..." onkeyup="showResult(this.value)"/>
                         <button class="search-btn"><box-icon class="search-icon-submit" name='search'></box-icon></button>
                         <div id="search-close"><box-icon name='x'></box-icon></div><br>
                     </div>
-                    <div class="searchbar">djsakldjaslkdjsaljld</div>
+                    <div class="searchbar">
+                        <table>
+                            <tr>
+                                <td><img src="" alt=""></td>
+                                <td>Name</td>
+                                <td>Price</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- Login -->

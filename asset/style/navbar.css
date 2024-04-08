@@ -382,9 +382,56 @@ body {
 }
 
 .searchbar {
-  width: 100%;
-  height: 20rem;
+  display: none;
+  margin: auto;
+  margin-top: .1rem;
+  border-radius: 5px;
+  width: 80%;
+  height: 25rem;
   overflow-y: auto;
-  color: white;
-  z-index: 100000;
+  background: white;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.searchbar table {
+  margin: auto;
+  width: 50%;
+  height: 10rem;
+  border-collapse: collapse;
+}
+
+.searchbar table td {
+  padding: 2rem 3rem 1rem 0;
+  text-align: center;
+}
+
+.searchbar table .img {
+  width: 10%;
+}
+
+.searchbar table img {
+  padding: 0;
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.searchbar table .name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-bottom: 0;
+  width: 90%;
+  text-align: left;
+}
+
+.searchbar table .price {
+  font-size: 1.75rem;
+  padding-top: 0;
+  width: 90%;
+  text-align: left;
+
+}
+
+.searchbar table .break-row {
+  border-bottom: 1px solid;
 }
