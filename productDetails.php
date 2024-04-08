@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'class/shop_class.php';
 ?>
 
 <?php
