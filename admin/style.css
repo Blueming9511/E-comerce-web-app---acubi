@@ -167,7 +167,7 @@ header {
   padding-right: .5rem;
 }
 
-.btn:hover{
+.btn:hover {
   color: white;
   background: #000;
   transition: .3s all;
@@ -226,12 +226,16 @@ span.money {
   font-size: 1.2rem;
 }
 
-.product-add button {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  height: 5rem;
-  width: 30%;
+.product.add button {
+  padding: 1em 5em;
+  border: 1px solid;
+  background-color: transparent;
+}
+
+.product.add button:hover {
+  color: white;
+  background: #000;
+  transition: .3s all;
 }
 
 .modify {
@@ -286,9 +290,3 @@ img {
 }
 
 /* product add  */
-
-.product.add button{
-  padding: 1em 5em;
-  border: 1px solid;
-  background-color: transparent;
-}

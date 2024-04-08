@@ -128,9 +128,12 @@ include 'login_sucess.php';
                 </div>
 
                 <div class="search-wrapper">
-                    <input class="search-input" type="search" placeholder="Search for products..." />
-                    <button class="search-btn"><box-icon class="search-icon-submit" name='search'></box-icon></button>
-                    <div id="search-close"><box-icon name='x'></box-icon></div>
+                    <div class="search-input-wrapper">
+                        <input class="search-input" type="search" placeholder="Search for products..." />
+                        <button class="search-btn"><box-icon class="search-icon-submit" name='search'></box-icon></button>
+                        <div id="search-close"><box-icon name='x'></box-icon></div><br>
+                    </div>
+                    <div class="searchbar">djsakldjaslkdjsaljld</div>
                 </div>
 
                 <!-- Login -->
