@@ -276,8 +276,8 @@ img {
   overflow-x: auto;
 }
 
-.product-list th:nth-child(7) {
-  float:left;
+.product-list td:nth-child(9) {
+  padding-right: 1rem;
 }
 
 .product-list td:nth-child(7) {
@@ -285,7 +285,8 @@ img {
   float:left;
   max-width: 20rem;
   overflow-y: auto;
-  overflow-wrap: break-word;
+  word-wrap: break-word; /* For older browsers */
+  word-break: break-word; /* For newer browsers */
   height: 9rem;
 }
 
