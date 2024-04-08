@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 07, 2024 lúc 10:49 AM
+-- Thời gian đã tạo: Th4 08, 2024 lúc 04:00 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Phiên bản PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,7 +38,7 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
-(2, 2, 'Y4K');
+(2, 2, 'Y2K');
 
 -- --------------------------------------------------------
 
@@ -74,6 +74,22 @@ CREATE TABLE `tbl_product` (
   `product_desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `product_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_product`
+--
+
+INSERT INTO `tbl_product` (`product_id`, `category_id`, `brand_id`, `product_name`, `product_price`, `product_desc`, `product_img`) VALUES
+(3, 1, 2, 'Men cotton shirt', 12, 'A men’s cotton shirt is a classic wardrobe staple that combines comfort and style. Made from cotton or a cotton-rich blend, these shirts are known for their breathability and softness', 'm6.jpg'),
+(5, 2, 2, 'Female cotton dress', 13, 'This is a description', 'i2.jpg'),
+(7, 1, 2, 'Y2k shirt long sleeves', 44, 'high-quality y2k cotton shirt', 'i1.jpg'),
+(9, 2, 3, 'Men black jeans', 33, 'High-quality men black jeans acubi style', 'm1.jpg'),
+(10, 1, 2, 'Y2k Black crop top', 22, 'This black crop top captures the essence of Y2K fashion with its sleek, cropped silhouette', 'i6.jpg'),
+(11, 1, 2, 'Korean full set', 50, 'Cute acubi outfit korean style', 'i8.jpg'),
+(12, 1, 2, 'Men Korean outfit', 66, 'Layering is key in Korean fashion Dont be afraid to experiment with different textures and lengths.', 'm2.jpg'),
+(13, 2, 2, 'Black men jeans Y2k ', 14, 'Fit is crucial. Opt for slightly oversized tops and well-fitting bottoms for a flattering silhouette.', 'm3.jpg'),
+(14, 2, 2, 'Blue Jacket ', 12, 'Oversized blue hoodie with graphic details or a printed bomber jacket.', 'm8.jpg'),
+(15, 2, 2, 'New Jeans', 22, 'Bunnies New Y2k Jeans With Sparkling details', 'i7.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,7 +152,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -148,7 +164,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

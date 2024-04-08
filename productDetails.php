@@ -45,6 +45,7 @@ if(isset($_GET['id'])) {
             <div class="product-description">
                 <?php echo $result['product_desc'] ?>
             </div>
+           
 
             <!-- ADD TO CART BUTTON -->
             <div class="addToCart">
