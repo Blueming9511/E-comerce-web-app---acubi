@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 include 'admin/class/product_class.php';
 ?>
 
@@ -13,11 +14,9 @@ if(isset($_GET['id'])) {
     $showProduct = $product->showProductById($productId);
     if ($showProduct) {
         $result = $showProduct -> fetch_assoc();
-        var_dump($result);
     }
+
 }
-
-
 ?>
 
 <div class="header-body productDetails">
@@ -26,7 +25,7 @@ if(isset($_GET['id'])) {
         <!-- PRODUCT LIES HERE -->
         <!-- IMG -->
         <div class="product-img">
-            <img src="admin/uploads/<?php $result['product_img'] ?>" alt="" srcset="">
+            <img src="admin/uploads/<?php echo $result['product_img'] ?>" alt="" srcset="">
         </div>
 
         <!-- INFO -->
@@ -39,12 +38,12 @@ if(isset($_GET['id'])) {
 
             <!-- PRICE -->
             <div class="product-price">
-                $<span class="price"><?php $result['product_price'] ?></span>
+                $<span class="price"><?php echo $result['product_price'] ?></span>
             </div>
 
             <!-- DESCRIPTION -->
             <div class="product-description">
-                <?php $result['product_desc'] ?>
+                <?php echo $result['product_desc'] ?>
             </div>
             ?>
 
