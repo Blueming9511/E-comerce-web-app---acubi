@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include 'admin/class/product_class.php';
+include 'class/shop_class.php';
 ?>
 
 <?php
@@ -8,10 +8,8 @@ include 'admin/class/product_class.php';
 if(isset($_GET['id'])) {
     // Retrieve the 'id' value from the URL
     $productId = $_GET['id'];
-    var_dump($productId);
-
-    $product = new Product;
-    $showProduct = $product->showProductById($productId);
+    $product = new Shop;
+    $showProduct = $product->displayProductsById($productId);
     if ($showProduct) {
         $result = $showProduct -> fetch_assoc();
     }
