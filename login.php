@@ -1,11 +1,12 @@
 <?php
-    function create_connection(){
-        $conn = mysqli_connect('localhost','root','','acubi');
-        if($conn-> connect_error){
-            die('Cannot connect to the server'. $conn->connect_error);
-        }
-        return $conn;
-    }
+function create_connection()
+{
+  $conn = mysqli_connect('localhost', 'root', '', 'acubi');
+  if ($conn->connect_error) {
+    die('Cannot connect to the server' . $conn->connect_error);
+  }
+  return $conn;
+}
 ?>
 <?php
 
@@ -73,6 +74,15 @@ if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="asset/Sliding-Sign-In-Sign-Up-Form-master/Sliding-Sign-In-Sign-Up-Form-master/style.css" />
   <title>Sign in & Sign up Form</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init({
+        publicKey: "408KM0qRopqE1pF6T",
+      });
+    })();
+  </script>
+
 </head>
 
 <body>
@@ -135,7 +145,7 @@ if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
           <p>
             Create an account now!
           </p>
-          <button class="btn transparent" id="sign-up-btn" >
+          <button class="btn transparent" id="sign-up-btn">
             Sign up
           </button>
         </div>

@@ -26,7 +26,9 @@ $showProduct = $product->displayProductsByCaregory('TOP');
                     <div class="image" data-name="<?php echo $i ?>">
                         <div id="zoom-In">
                             <figure>
-                                <img src="admin/uploads/<?php echo $result['product_img'] ?>" alt="Tranding">
+                                <a href="productDetails.php?id=<?php echo $result['product_id'] ?>">
+                                    <img src="admin/uploads/<?php echo $result['product_img'] ?>" alt="Tranding" href>
+                                </a>
                             </figure>
                         </div>
                     </div>

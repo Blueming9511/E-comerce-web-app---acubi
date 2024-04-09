@@ -78,7 +78,6 @@ th {
   text-align: center;
   width: 25px;
   height: 25px;
-  border: 1px solid;
   background-color: black;
   color: white;
   border-radius: 50%;
@@ -137,4 +136,22 @@ table {
 .cart-form {
   display: grid;
   place-items: center;
+}
+
+.cart-table, .cart-table td {
+  border-collapse: collapse;
+  border: 2px solid;
+  width: 100%;
+}
+
+.cart-table .product-img {
+  width: 20%;
+}
+
+.cart-table .product-img img {
+  width: 100%;
+}
+
+.cart-table .product-name {
+  width: 3rem;
 }

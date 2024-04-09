@@ -177,5 +177,18 @@ previewBox.forEach(close => {
   }
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+  const addBtn = document.querySelector('.add');
+  const reBtn = document.querySelector('.minus');
+  const quantitySpan = document.querySelector('.quantity');
+  
+  addBtn.addEventListener('click', function() {
+    let currentQuantity = parseInt(quantitySpan.textContent);
+    quantitySpan.textContent = currentQuantity + 1;
+  });
 
-
+  reBtn.addEventListener('click', function() {
+    let currentQuantity = parseInt(quantitySpan.textContent);
+    quantitySpan.textContent = currentQuantity - 1;
+  });
+});
