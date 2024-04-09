@@ -46,7 +46,7 @@ if(isset($_GET['id'])) {
 
             <!-- ADD TO CART BUTTON -->
             <div class="addToCart">
-                <button id="addToCart-btn" onclick="addData(<?php $_GET['id'] ?>)">BUY NOW</button>
+                <button id="addToCart-btn" onclick="add(<?php echo $result['product_id'] ?>)">BUY NOW</button>
                 </script>
             </div>
         </div>

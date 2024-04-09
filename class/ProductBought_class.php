@@ -56,7 +56,17 @@ class ProductBought
     }
 
     public function updateQuantity($product_id, $quantity) {
-        $query = "UPDATE tbl_product_bought SET quantity = '$quantity', subtotal = price * '$quantity' WHERE product_id = '$product_id";
+        $query = "UPDATE tbl_product_bought
+        SET quantity = quantity + '$quantity',
+            subtotal = price * (quantity + 1)
+        WHERE product_id = '$product_id';
+        ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
+    public function displayAmountItem() {
+        $query = "SELECT SUM(quantity) FROM tbl_product_bought";
         $result = $this -> db -> select($query);
         return $result;
     }
