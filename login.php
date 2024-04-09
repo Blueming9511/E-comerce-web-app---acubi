@@ -1,4 +1,3 @@
-
 <?php
 include 'db.php';
 
@@ -28,9 +27,14 @@ if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
     if ($data) {
 
       $_SESSION['user'] = $user;
-      $_SESSION['name'] = $data['firstname']. ' ' . $data['lastname'];
-      header("Location: index.php");
-      exit();
+      $_SESSION['name'] = $data['firstname'] . ' ' . $data['lastname'];
+      if ($data['activated'] == 0) {
+        $error = 'Please vertify your account!';
+      } else {
+        header("Location: index.php");
+        exit();
+      }
+
     } else {
       $error = 'Username or Password incorrect!';
     }
