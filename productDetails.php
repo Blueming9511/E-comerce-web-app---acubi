@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'admin/class/product_class.php';
 ?>
 
 <?php
@@ -8,10 +7,8 @@ include 'admin/class/product_class.php';
 if(isset($_GET['id'])) {
     // Retrieve the 'id' value from the URL
     $productId = $_GET['id'];
-    var_dump($productId);
-
-    $product = new Product;
-    $showProduct = $product->showProductById($productId);
+    $product = new Shop;
+    $showProduct = $product->displayProductsById($productId);
     if ($showProduct) {
         $result = $showProduct -> fetch_assoc();
     }
@@ -33,12 +30,12 @@ if(isset($_GET['id'])) {
         <div class="product-info">
             <!-- NAME -->
             <div class="product-name">
-            <?php $result['product_name'] ?>
+            <?php echo $result['product_name'] ?>
             </div>
 
             <!-- PRICE -->
             <div class="product-price">
-                $<span class="price"><?php echo $result['product_price'] ?></span>
+                $<span class="price"><?php echo $result['product_price'] ?> </span>
             </div>
 
             <!-- DESCRIPTION -->

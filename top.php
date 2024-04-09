@@ -1,12 +1,10 @@
 <?php
-include 'config.php';
 include 'header.php';
-include 'class/shop.php';
 ?>
 
 <?php
 $product = new Shop;
-$showProduct = $product->displayProducts();
+$showProduct = $product->displayProductsByCaregory('TOP');
 ?>
 
 <!-- HTML -->
