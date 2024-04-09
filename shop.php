@@ -1,5 +1,5 @@
-<?php  
-    include 'header.php';
+<?php
+include 'header.php';
 ?>
         <main class="header-body" style="padding-top: 7em;">
 
