@@ -1,5 +1,4 @@
 let mul_data = [];
-const subMoney = [];
 let itemAmount = localStorage.getItem('itemAmount') || 0;
 let submoney = document.querySelector('.sub-money');
 
@@ -16,7 +15,7 @@ function addData(productId) {
 
     let productName = document.querySelector('.productDetails-wrapper .product-info .product-name').innerText;
     let productPrice = document.querySelector('.productDetails-wrapper .product-info .price').innerText;
-    let productImg = document.querySelector('.productDetails-wrapper .product-img img').name;
+    let productImg = document.querySelector('.productDetails-wrapper .product-img img').src;
     let data = {
         'quantity': 1,
         'subtotal': productPrice,

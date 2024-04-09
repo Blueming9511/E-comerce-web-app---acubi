@@ -39,40 +39,40 @@
 
 // let product_list = document.querySelector('.shop-field')
 
-// function initApp () {
+function initApp () {
     
-//   products.forEach((value, key) => {
-//     let newItem = document.createElement('div')
-//     newItem.innerHTML = `
-//       <div class="image">
-// 				<div id="zoom-In">
-// 					<figure>
-//                     <img src="${value.img}" alt="Tranding">
-// 					</figure>
-// 				</div>
-// 			</div>
+  products.forEach((value, key) => {
+    let newItem = document.createElement('div')
+    newItem.innerHTML = `
+      <div class="image">
+				<div id="zoom-In">
+					<figure>
+                    <img src="${value.img}" alt="Tranding">
+					</figure>
+				</div>
+			</div>
         
   
-//           <div class="item-content">
-//               <p class="item-name">
-//                   ${value.name}
-//               </p>
+          <div class="item-content">
+              <p class="item-name">
+                  ${value.name}
+              </p>
   
-//               <p class="item-price">$${value.price}<svg class="cart-icon-item" onclick="addToCart(${key})" style="cursor: pointer;"
-//                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-//                       version="1.1" id="ast-basket-icon-svg" x="0px" y="0px" width="100" height="100"
-//                       viewBox="826 826 140 140" enable-background="new 826 826 140 140" xml:space="preserve">
-//                       <path
-//                   </path>
-//                   </svg>
-//               </p>
-//           </div>
-//       `
-//         newItem.classList.add('item')
-//         newItem.setAttribute('data-name', value.id)
-//         product_list.appendChild(newItem)
-//     })
-// }
+              <p class="item-price">$${value.price}<svg class="cart-icon-item" onclick="addToCart(${key})" style="cursor: pointer;"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1" id="ast-basket-icon-svg" x="0px" y="0px" width="100" height="100"
+                      viewBox="826 826 140 140" enable-background="new 826 826 140 140" xml:space="preserve">
+                      <path
+                  </path>
+                  </svg>
+              </p>
+          </div>
+      `
+        newItem.classList.add('item')
+        newItem.setAttribute('data-name', value.id)
+        product_list.appendChild(newItem)
+    })
+}
 
 initApp()
 let total = document.querySelector('.total-money')

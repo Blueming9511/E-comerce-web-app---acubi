@@ -12,19 +12,22 @@ function login($username, $password)
 {
     $conn = create_connection();
     $sql = 'select * from tbl_user where username=?';
+
     $stm = $conn->prepare($sql);
     $stm->bind_param("s", $username);
-    if (!$stm->execute()) return false;
+    if (!$stm->execute()) {
+        return null;
+    }
 
     $result  = $stm->get_result();
-
-    if ($result->num_rows !== 1) return false;
-
     $data = $result->fetch_assoc();
 
-    $user_pwd = $data["password"];
-    if ($user_pwd !== $password) return false;
-    return true;
+    $hashed_pwd =  $data['password'];
+
+    if (!password_verify($password, $hashed_pwd)) {
+        return null;
+    }
+    return $data;
 }
 
 
@@ -76,10 +79,11 @@ function is_user_exist($user)
     }
 }
 
-function register($user, $email, $pass, $firstname, $lastname, $phonenumber, $address ){
+function register($user, $email, $pass, $firstname, $lastname, $phonenumber, $address)
+{
 
     // check if email is exist
-    if(is_email_exist($email)){
+    if (is_email_exist($email)) {
         return array('code' => 1, 'error' => 'Email exists!');
     }
 
@@ -93,9 +97,9 @@ function register($user, $email, $pass, $firstname, $lastname, $phonenumber, $ad
     $conn = create_connection();
     $stm = $conn->prepare($sql);
     $stm->bind_param('ssssssss', $user, $email, $hash, $firstname, $lastname, $phonenumber, $address, $token);
-    
-    
-    if(!$stm->execute()) {
+
+
+    if (!$stm->execute()) {
         return array('code' => 2, 'error' => 'cannot execute command');
     }
 

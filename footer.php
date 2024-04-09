@@ -45,6 +45,7 @@
     <script src="asset/js/addToCart.js"></script>
     <script src="asset/js/items.js"></script>
     <script src="asset/js/navbar.js"></script>
+    <script src="data/savedata.js"></script>
 
     <!-- slider -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
