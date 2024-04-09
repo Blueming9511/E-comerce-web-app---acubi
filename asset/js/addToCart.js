@@ -181,14 +181,21 @@ document.addEventListener("DOMContentLoaded", function() {
   const addBtn = document.querySelector('.add');
   const reBtn = document.querySelector('.minus');
   const quantitySpan = document.querySelector('.quantity');
-  
+  const price = document.querySelector('.product-price');
+
   addBtn.addEventListener('click', function() {
-    let currentQuantity = parseInt(quantitySpan.textContent);
-    quantitySpan.textContent = currentQuantity + 1;
+      let currentQuantity = parseInt(quantitySpan.textContent);
+      quantitySpan.textContent = currentQuantity + 1;
+      let currentPrice = parseFloat(price.textContent.replace('$', ''));
+      price.textContent = '$' + (currentPrice + currentPrice).toFixed(2);
   });
 
   reBtn.addEventListener('click', function() {
-    let currentQuantity = parseInt(quantitySpan.textContent);
-    quantitySpan.textContent = currentQuantity - 1;
+      let currentQuantity = parseInt(quantitySpan.textContent);
+      if (currentQuantity > 1) {
+          quantitySpan.textContent = currentQuantity - 1;
+          let currentPrice = parseFloat(price.textContent.replace('$', ''));
+          price.textContent = '$' + (currentPrice - currentPrice).toFixed(2);
+      }
   });
 });
