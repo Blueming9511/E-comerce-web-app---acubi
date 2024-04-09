@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 08, 2024 lúc 04:00 PM
+-- Thời gian đã tạo: Th4 09, 2024 lúc 10:42 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -98,23 +98,27 @@ INSERT INTO `tbl_product` (`product_id`, `category_id`, `brand_id`, `product_nam
 --
 
 CREATE TABLE `tbl_user` (
-  `user_id` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `userID` int(10) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `address` varchar(150) NOT NULL,
-  `phonenumber` varchar(12) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `phonenumber` varchar(11) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `activated` int(1) NOT NULL DEFAULT 0,
+  `activate_token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `email`, `password`, `username`, `firstname`, `lastname`, `address`, `phonenumber`) VALUES
-(1, 'nguyennguyen8343@gmail.com', '123456', 'itznguyen', 'nguyen', 'ta', 'hcmc', '0329868603'),
-(2, 'hello@gmail.com', 'admin123', 'admin', 'quan tri', 'vien`', 'hn', '0329865703');
+INSERT INTO `tbl_user` (`userID`, `username`, `email`, `password`, `firstname`, `lastname`, `phonenumber`, `address`, `activated`, `activate_token`) VALUES
+(2, 'randomPerson', 'random@gmail.com', '$2y$10$nL7SEBU6mOwefyKBWEfDdO5z0qSO0oegCGR01Imihr7r26bwC3nwC', 'Van', 'Th', '1234567890', '163 QL55, TT. Phước Bửu, Xuyên Mộc, Bà Rịa - Vũng Tàu', 0, 'c0bbcf54885900ffa3005d42eb0d32a5'),
+(3, 'ChanhHy', 'Hy@gmail.com', '$2y$10$yix0k/WBtyo3HqqujLxPseRJGrkb0wZen1tmyqmq92CQpgx/Bys72', 'Hy', 'Huynh', '12347590', 'Ho chi Minh', 0, 'd2c6726f992382256fa6a6cd8abaa7e0'),
+(4, 'Yenne', 'YenYen@gmail.com', '$2y$10$lyPJ.CQc5qfacg2rCbIDjuhy8ihGTq5sE8Y39H07p2Vo2VtF5QOZC', 'Yen', 'Nguyen', '1082917381', 'HCM', 0, '4fe4957d158b6f1f88b36937cc24712b'),
+(5, 'Nguyenne', 'nguyennguyen8343@gmail.com', '$2y$10$X1mkRUMcKekJV1uwAnWFyunDPTF5MQwTyB9cK/tYg3QTVne0cTI42', 'Nguyen', 'Ta', '0918988154', 'ấp thanh bình 1', 0, '6d7c3e1a1d6b6736af3e53f87ef5b35d');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -142,7 +146,7 @@ ALTER TABLE `tbl_product`
 -- Chỉ mục cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -165,6 +169,12 @@ ALTER TABLE `tbl_category`
 --
 ALTER TABLE `tbl_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
