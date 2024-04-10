@@ -233,3 +233,4 @@ function updateSession(productId, type) {
   xhr.open("GET", url);
   xhr.send();
 }
+

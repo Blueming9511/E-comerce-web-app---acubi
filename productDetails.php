@@ -35,7 +35,7 @@ if(isset($_GET['id'])) {
 
             <!-- PRICE -->
             <div class="product-price">
-                $<span class="price"><?php echo $result['product_price'] ?> </span>
+                $<span class="price"><?php echo $result['product_price'] ?></span>.00
             </div>
 
             <!-- DESCRIPTION -->
