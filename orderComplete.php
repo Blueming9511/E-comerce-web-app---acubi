@@ -11,11 +11,11 @@ $bill_id = $billID->fetch_assoc()['bill_id'];
 
 $bill_info = $bill->displayBill($bill_id)->fetch_assoc();
 
-$products = $billProduct->displayBillProduct($bill_id);
+$products = $billProduct->displayBillProduct($bill_id)->fetch_all(MYSQLI_ASSOC);
+
 $totalResult = $billProduct->displayTotalMoney($bill_id);
 $total = $totalResult->fetch_row()[0];
 
-if (isset($_SERVER['REQUEST_METHOD'] == 'POST') )
 ?>
 <div class="header-body">
     <!-- Title -->
@@ -61,12 +61,12 @@ if (isset($_SERVER['REQUEST_METHOD'] == 'POST') )
                 <?php
                 $subTotal = 0; // Khởi tạo subTotal
                 foreach ($products as $product) {
-                    $subTotal += $product['price'] * $product['quantity'];
+                    $subTotal += $product['subtotal'];
                 ?>
                     <tr>
                         <td class="product-name" id=<?php echo $product['product_id'] ?>><?php echo $product['product_name'] ?></td>
                         <td rowspan="2" class="product-price">
-                            $<?php echo $product['price'] * $product['quantity'] ?>.00
+                            $<?php echo $product['subtotal'] ?>.00
                         </td>
                     </tr>
                     <tr>
@@ -88,6 +88,15 @@ if (isset($_SERVER['REQUEST_METHOD'] == 'POST') )
     </div>
     <a id="continueToShop" href="index.php">Continue to shop</a>
 </div>
+
+<?php
+unset($_SESSION['itemAmount']);
+unset($_SESSION['totalAmount']);
+foreach ($_SESSION as $key => $value) {
+    echo "$key: $value<br>";
+}
+
+?>
 
 <?php
 include 'footer.php';

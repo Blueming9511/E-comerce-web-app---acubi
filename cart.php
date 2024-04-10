@@ -73,10 +73,9 @@ include 'header.php';
 
             <div class="checkout">
                 <div class="cart-total">
-                    <h2>Total: <span class="total-price" id =total> $<?php echo $subTotal ?>.00</span></h2>
-
+                <h2>Total: <span class="total-price" id="total"> $<?php echo isset($_SESSION['totalAmount']) ? $_SESSION['totalAmount'] : 0 ?>.00</span></h2>
                 </div>
-                <a href="checkout.php" class="navToCheckout" onclick=saveData()>Check out</a>
+                <a href="<?php echo isset($_SESSION['totalAmount']) ? 'checkout.php' : '#' ?>" class="navToCheckout">Check out</a>            
             </div>
         </form>
     </div>

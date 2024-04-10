@@ -117,7 +117,7 @@
 
 
                     </div>
-                    <button class="placeOrder-btn" type="submit">Place order</button>
+                        <button class="placeOrder-btn" type="submit">Place order</button>
 
                 </form>
 

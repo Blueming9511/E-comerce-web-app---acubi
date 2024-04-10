@@ -26,6 +26,14 @@ class Shop
         return $result;
     }
 
+    public function displayProductPriceById($productId)
+    {
+        $query = "SELECT product_price FROM tbl_product WHERE product_id = '$productId'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
+
     public function displayProductsByCaregory($category_name)
     {
         $query = "SELECT p.* FROM tbl_product p INNER JOIN tbl_category c ON p.category_id = c.category_id WHERE c.category_name = '$category_name'";
