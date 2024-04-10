@@ -8,13 +8,14 @@ include 'header.php';
         CART
     </div>
 
-    <div class="process">
+    <div class="cart-flex">
+         <div class="process">
         <a id="shopping-cart" href="cart.php">SHOPPING CART</a> > <a id="checkout-details" style="color: #00000051;" href="checkout.php">CHECKOUT DETAILS</a> > <a id="order-complete" href="">ORDER COMPLETE</a>
     </div>
 
-    <div class="cart-wrapper">
+    <div class="cart-wrapper" style="width: 100%;">
         <form class="cart-form" action="" method="post">
-            <table class="shop-table">
+            <table class="shop-table" style="margin-left:0%;">
                 <thead>
                     <tr>
                         <th class="product-name">Product</th>
@@ -75,7 +76,7 @@ include 'header.php';
                 </tbody>
             </table>
 
-            <div class="checkout">
+            <div class="checkout"  style="margin-left:0%; width:100%;">
                 <div class="cart-total">
                     <h2>Total: <span class="total-price" id="total"> $<?php echo isset($_SESSION['totalAmount']) ? $_SESSION['totalAmount'] : 0 ?>.00</span></h2>
                 </div>
@@ -83,6 +84,8 @@ include 'header.php';
             </div>
         </form>
     </div>
+    </div>
+   
 </div>
 
 

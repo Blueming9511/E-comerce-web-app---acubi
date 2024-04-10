@@ -4,7 +4,12 @@
   font-size: 30px;
   font-family: var(--emphasized-font);
 }
-
+.cart-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .process {
   margin-bottom: 1em;
   text-align: center;
@@ -144,10 +149,7 @@ table {
   width: 8rem;
 }
 
-.shop-table {
-  margin-left: 50%;
-  width: 100rem;
-}
+
 
 .shop-table .product-img {
   width: 100%;
