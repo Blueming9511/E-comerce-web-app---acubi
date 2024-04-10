@@ -2,6 +2,14 @@
 include 'header.php';
 include 'class/bill_class.php';
 include 'class/billProduct.php';
+include 'db.php';
+
+
+session_start();
+// send thank u email
+$data = getData($_SESSION['user']);
+sendThankYouEmail($data['email'], $data['firstname']);
+
 
 $billProduct = new BillProduct;
 $bill = new Bill;
@@ -46,7 +54,7 @@ $total = $totalResult->fetch_row()[0];
                 <tr>
                     <td class="order-ID"><?php echo $bill_id ?></td>
                     <td class="order-date"><?php echo $bill_info['bill_date'] ?></td>
-                    <td class="order-total">$<?php echo $total?></td>
+                    <td class="order-total">$<?php echo $total ?></td>
                     <td class="order-payment-method"><?php echo $bill_info['payment_method'] ?></td>
                 </tr>
             </tbody>
