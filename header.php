@@ -1,6 +1,7 @@
     <?php
     include 'login_sucess.php';
     include 'productlinkgenerate.php';
+    require_once 'class/shop_class.php';
     // include 'class/ProductBought_class.php';
     $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
     ?>
@@ -139,49 +140,49 @@
                             } ?>
                         </div>
 
-
-
+                        <ul class="cart-body">
                     </div>
+                </div>
 
 
 
-                    <!-- Search -->
-                    <div class="search flex-center">
-                        <box-icon class="search-icon" name='search'></box-icon>
+                <!-- Search -->
+                <div class="search flex-center">
+                    <box-icon class="search-icon" name='search'></box-icon>
 
+                </div>
+
+                <div class="search-wrapper">
+                    <div class="search-input-wrapper">
+                        <input class="search-input" type="search" placeholder="Search for products..." onkeyup="showResult(this.value)" />
+                        <button class="search-btn"><box-icon class="search-icon-submit" name='search'></box-icon></button>
+                        <div id="search-close"><box-icon name='x'></box-icon></div><br>
                     </div>
-
-                    <div class="search-wrapper">
-                        <div class="search-input-wrapper">
-                            <input class="search-input" type="search" placeholder="Search for products..." onkeyup="showResult(this.value)" />
-                            <button class="search-btn"><box-icon class="search-icon-submit" name='search'></box-icon></button>
-                            <div id="search-close"><box-icon name='x'></box-icon></div><br>
-                        </div>
-                        <div class="searchbar">
-                            <table>
-                                <tr>
-                                    <td><img src="" alt=""></td>
-                                    <td>Name</td>
-                                    <td>Price</td>
-                                </tr>
-                            </table>
-                        </div>
+                    <div class="searchbar">
+                        <table>
+                            <tr>
+                                <td><img src="" alt=""></td>
+                                <td>Name</td>
+                                <td>Price</td>
+                            </tr>
+                        </table>
                     </div>
+                </div>
 
-                    <!-- Login -->
+                <!-- Login -->
 
-                    <?php
-                    if (isset($_SESSION["user"])) {
-                        echo '<a class="login flex-center" href="logout.php">
+                <?php
+                if (isset($_SESSION["user"])) {
+                    echo '<a class="login flex-center" href="logout.php">
                         Welcome, ' . $user . '
                     </a>';
-                    } else {
-                        echo ' <a class="login flex-center" href="login.php">
+                } else {
+                    echo ' <a class="login flex-center" href="login.php">
                         LOG IN
                         
                     </a>
                             ';
-                    }
-                    ?>
-                </div>
-            </header>
+                }
+                ?>
+        </div>
+        </header>

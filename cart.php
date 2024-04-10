@@ -31,41 +31,45 @@ include 'header.php';
                         foreach ($_SESSION['itemAmount'] as $productId => $amount) {
                             $product[] = $productId;
                         }
-                        $strId = implode(', ', $product);
-                        $query = "SELECT * FROM tbl_product WHERE product_id IN ($strId) ORDER BY product_id DESC";
-                        $con = mysqli_connect("localhost", "root", "", "acubi");
-                        $results = mysqli_query($con, $query);
-
-                        $subTotal = 0;
-
-                        while ($result = $results->fetch_assoc()) {
-                            $subTotal += $result['product_price'] * $_SESSION['itemAmount'][$result['product_id']];
-
+                        if (count($product) > 0) {
+                            $strId = implode(', ', $product);
+                            $query = "SELECT * FROM tbl_product WHERE product_id IN ($strId) ORDER BY product_id DESC";
+                            $con = mysqli_connect("localhost", "root", "", "acubi");
+                            $results = mysqli_query($con, $query);
+                            $subTotal = 0;
+                            while ($result = $results->fetch_assoc()) {
+                                $subTotal += $result['product_price'] * $_SESSION['itemAmount'][$result['product_id']];
+                                var_dump($result);
                     ?>
-                            <tr class="cart-item" class="product">
-                                <td class="product-img">
-                                    <img src="asset/image/SHOP-IMG/<?php echo $result['product_img'] ?>" alt="">
-                                    
-                                    <div class="product-info">
-                                        <h2 class="product-name"><?php echo $result['product_name'] ?></h2>
-                                        <div class="product-price">$ <?php echo $result['product_price'] ?>
-                                        <span class="product-remove">remove</span>
+                                <tr class="cart-item" class="product">
+                                    <td class="product-img">
+                                        <img src="asset/image/SHOP-IMG/<?php echo $result['product_img'] ?>" alt="">
+
+                                        <div class="product-info">
+                                            <h2 class="product-name"><?php echo $result['product_name'] ?></h2>
+                                            <div class="product-price">$ <?php echo $result['product_price'] ?>
+                                                <span class="product-remove">
+                                                    <a href="delete_session.php?quantity=<?php echo $_SESSION['itemAmount'][$result['product_id']]; ?>
+                                                &price=<?php echo $result['product_price'];
+                                                        ?>&id=<?php echo $result['product_id']; ?>">
+                                                        remove</a>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                    
-                                <td class="product-quantity" data-title="Quantity">
-                                    <span class="minus" onclick="decreaseQuantity(<?php echo $result['product_id'];?>, <?php echo $result['product_price'];?>)"> - </span>
-                                    <span id="quantity-<?php echo $result['product_id']; ?>" class="quantity"> <?php echo $_SESSION['itemAmount'][$result['product_id']] ?> </span>                                    
-                                    <span class="add" onclick="increaseQuantity(<?php echo $result['product_id']; ?>, <?php echo $result['product_price'];?>)"> + </span>
+                                    </td>
 
-                                </td>   
+                                    <td class="product-quantity" data-title="Quantity">
+                                        <span class="minus" onclick="decreaseQuantity(<?php echo $result['product_id']; ?>, <?php echo $result['product_price']; ?>)"> - </span>
+                                        <span id="quantity-<?php echo $result['product_id']; ?>" class="quantity"> <?php echo $_SESSION['itemAmount'][$result['product_id']] ?> </span>
+                                        <span class="add" onclick="increaseQuantity(<?php echo $result['product_id']; ?>, <?php echo $result['product_price']; ?>)"> + </span>
+                                    </td>
 
-                                <td class="product-subtotal" data-title="Subtotal">
-                                    <span class="Price-amount amount"><bdi id="subtotal-<?php echo $result['product_id']; ?>"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $_SESSION['itemAmount'][$result['product_id']] * $result['product_price']?>.00</bdi></span>
-                                </td>
-                            </tr>
+                                    <td class="product-subtotal" data-title="Subtotal">
+                                        <span class="Price-amount amount"><bdi id="subtotal-<?php echo $result['product_id']; ?>"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $_SESSION['itemAmount'][$result['product_id']] * $result['product_price'] ?>.00</bdi></span>
+                                    </td>
+                                </tr>
                     <?php
+                            }
                         }
                     }
                     ?>
@@ -74,9 +78,9 @@ include 'header.php';
 
             <div class="checkout"  style="margin-left:0%; width:100%;">
                 <div class="cart-total">
-                <h2>Total: <span class="total-price" id="total"> $<?php echo isset($_SESSION['totalAmount']) ? $_SESSION['totalAmount'] : 0 ?>.00</span></h2>
+                    <h2>Total: <span class="total-price" id="total"> $<?php echo isset($_SESSION['totalAmount']) ? $_SESSION['totalAmount'] : 0 ?>.00</span></h2>
                 </div>
-                <a href="<?php echo isset($_SESSION['totalAmount']) ? 'checkout.php' : '#' ?>" class="navToCheckout">Check out</a>            
+                <a href="<?php echo isset($_SESSION['totalAmount']) ? 'checkout.php' : '#' ?>" class="navToCheckout">Check out</a>
             </div>
         </form>
     </div>
