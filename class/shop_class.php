@@ -33,6 +33,11 @@ class Shop
         return $result;
     }
 
+    public function displayAllCategory() {
+        $query = "SELECT * FROM tbl_category ORDER BY category_id DESC";
+        $result = $this->db->select($query);
+        return $result;
+    }
 
     public function displayProductsByCaregory($category_name)
     {

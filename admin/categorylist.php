@@ -30,7 +30,7 @@ $showCategory = $category->showCategory();
             <td><?php echo $i ?></td>
             <td><?php echo $result['category_id'] ?></td>
             <td><?php echo $result['category_name'] ?></td>
-            <td><img src="<?php echo $result['category_img'] ?>"></td>
+            <td><img src="uploads/<?php echo $result['category_img'] ?>"></td>
             <td>
               
               <a class="btn" href="categoryedit.php?category_id=<?php echo $result['category_id'] ?>">
@@ -38,7 +38,7 @@ $showCategory = $category->showCategory();
               </a>
             </td>
             <td>
-              <a class="btn" href="categorydelete.php?category_id= <?php echo $result['category_id'] ?>">
+              <a class="btn" href="categorydelete.php?category_id=<?php echo $result['category_id'] ?>">
                 Delete
               </a>
             </td>

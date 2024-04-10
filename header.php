@@ -147,6 +147,13 @@
 
                             <ul class="cart-body">
                                 <table class="cart-table">
+                                    <tr class="cart-product">
+                                        <td class="cart-img"><img src="" alt=""></td>
+                                        <td class="cart-name">Nahh</td>
+                                        <td class="cart-quantity">x2</td>
+                                        <td class="cart-total">$23.00</td>;
+                                    </tr>
+
                                 </table>
                             </ul>
 
