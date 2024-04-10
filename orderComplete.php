@@ -14,6 +14,8 @@ $bill_info = $bill->displayBill($bill_id)->fetch_assoc();
 $products = $billProduct->displayBillProduct($bill_id);
 $totalResult = $billProduct->displayTotalMoney($bill_id);
 $total = $totalResult->fetch_row()[0];
+
+if (isset($_SERVER['REQUEST_METHOD'] == 'POST') )
 ?>
 <div class="header-body">
     <!-- Title -->
@@ -64,7 +66,7 @@ $total = $totalResult->fetch_row()[0];
                     <tr>
                         <td class="product-name" id=<?php echo $product['product_id'] ?>><?php echo $product['product_name'] ?></td>
                         <td rowspan="2" class="product-price">
-                            $ <?php echo $product['price'] * $product['quantity'] ?>
+                            $<?php echo $product['price'] * $product['quantity'] ?>.00
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +81,7 @@ $total = $totalResult->fetch_row()[0];
             <div class="cart-footer">
                 <div class="total-title">Total</div>
                 <div class="total-money">
-                    <?php echo $subTotal ?>
+                    $<?php echo $subTotal ?>.00
                 </div>
             </div>
         </div>

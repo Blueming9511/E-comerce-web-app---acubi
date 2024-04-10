@@ -54,12 +54,14 @@ include 'header.php';
                                 </td>
                                     
                                 <td class="product-quantity" data-title="Quantity">
-                                    <span class="minus" onclick="decreaseQuantity(<?php echo $result['product_id']; ?>)"> - </span>
-                                    <span id="quantity-<?php echo $result['product_id']; ?>" class="quantity"> <?php echo $_SESSION['itemAmount'][$result['product_id']] ?> </span>                                    <span class="add" onclick="increaseQuantity(<?php echo $result['product_id']; ?>)"> + </span>
+                                    <span class="minus" onclick="decreaseQuantity(<?php echo $result['product_id'];?>, <?php echo $result['product_price'];?>)"> - </span>
+                                    <span id="quantity-<?php echo $result['product_id']; ?>" class="quantity"> <?php echo $_SESSION['itemAmount'][$result['product_id']] ?> </span>                                    
+                                    <span class="add" onclick="increaseQuantity(<?php echo $result['product_id']; ?>, <?php echo $result['product_price'];?>)"> + </span>
+
                                 </td>   
 
                                 <td class="product-subtotal" data-title="Subtotal">
-                                    <span class="Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php echo $result['product_price'] ?></bdi></span>
+                                    <span class="Price-amount amount"><bdi id="subtotal-<?php echo $result['product_id']; ?>"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $_SESSION['itemAmount'][$result['product_id']] * $result['product_price']?>.00</bdi></span>
                                 </td>
                             </tr>
                     <?php
@@ -71,7 +73,7 @@ include 'header.php';
 
             <div class="checkout">
                 <div class="cart-total">
-                    <h2>Total: <span class="total-price"><?php echo $subTotal ?></span></h2>
+                    <h2>Total: <span class="total-price" id =total> $<?php echo $subTotal ?>.00</span></h2>
 
                 </div>
                 <a href="checkout.php" class="navToCheckout" onclick=saveData()>Check out</a>

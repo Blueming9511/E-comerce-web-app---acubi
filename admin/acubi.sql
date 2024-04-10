@@ -3,9 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
+<<<<<<< HEAD
+-- Thời gian đã tạo: Th4 10, 2024 lúc 05:57 AM
+=======
 -- Thời gian đã tạo: Th4 10, 2024 lúc 06:00 AM
+>>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -223,16 +227,14 @@ INSERT INTO `tbl_product_bought` (`product_bought_id`, `product_id`, `product_im
 --
 
 CREATE TABLE `tbl_user` (
-  `userID` int(10) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `firstname` varchar(50) DEFAULT NULL,
-  `lastname` varchar(50) DEFAULT NULL,
-  `phonenumber` varchar(11) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `activated` int(1) NOT NULL DEFAULT 0,
-  `activate_token` varchar(255) NOT NULL
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `address` varchar(150) NOT NULL,
+  `phonenumber` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -287,7 +289,7 @@ ALTER TABLE `tbl_product_bought`
 -- Chỉ mục cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`userID`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -325,6 +327,11 @@ ALTER TABLE `tbl_product`
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product_bought`
+<<<<<<< HEAD
+--
+ALTER TABLE `tbl_product_bought`
+  MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
 --
 ALTER TABLE `tbl_product_bought`
   MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
@@ -334,6 +341,7 @@ ALTER TABLE `tbl_product_bought`
 --
 ALTER TABLE `tbl_user`
   MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

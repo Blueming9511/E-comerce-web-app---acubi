@@ -176,7 +176,7 @@
                                 <tr>
                                     <td class="product-name" id=<?php echo $result['product_id'] ?>><?php echo $result['product_name'] ?></td>
                                     <td rowspan="2" class="product-price">
-                                        $ <?php echo $result['product_price'] * $_SESSION['itemAmount'][$result['product_id']] ?>
+                                        $ <?php echo $result['product_price'] * $_SESSION['itemAmount'][$result['product_id']] ?>.00
                                     </td>
                                 </tr>
                                 <tr>
@@ -193,7 +193,7 @@
                     <div class="cart-footer">
                         <div class="total-title">Total</div>
                         <div class="total-money">
-                            <?php echo $subTotal ?>
+                            $<?php echo $subTotal ?>.00
                         </div>
                     </div>
                 </div>

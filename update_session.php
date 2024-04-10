@@ -1,11 +1,19 @@
 <?php
+
 session_start();
 
-if (isset($_GET['productId']) && isset($_GET['quantity'])) {
-    $productId = $_GET['productId'];
-    $quantity = $_GET['quantity'];
+$productId = $_GET['productId'];
+$type = $_GET['type'];
 
-    // Cập nhật số lượng sản phẩm trong session
-    $_SESSION['itemAmount'][$productId] = $quantity;
+// Cập nhật số lượng sản phẩm trong session
+if (isset($_SESSION['itemAmount'][$productId])) {
+    if($type === 'minus') 
+        $_SESSION['itemAmount'][$productId] -= 1; 
+    else if ($type = 'add')
+        $_SESSION['itemAmount'][$productId] += 1; 
+
 }
+
+echo ( $_SESSION['itemAmount'][$productId]);
+
 ?>
