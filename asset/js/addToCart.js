@@ -39,40 +39,40 @@
 
 // let product_list = document.querySelector('.shop-field')
 
-function initApp () {
-    
-  products.forEach((value, key) => {
-    let newItem = document.createElement('div')
-    newItem.innerHTML = `
-      <div class="image">
-				<div id="zoom-In">
-					<figure>
-                    <img src="${value.img}" alt="Tranding">
-					</figure>
-				</div>
-			</div>
-        
-  
-          <div class="item-content">
-              <p class="item-name">
-                  ${value.name}
-              </p>
-  
-              <p class="item-price">$${value.price}<svg class="cart-icon-item" onclick="addToCart(${key})" style="cursor: pointer;"
-                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      version="1.1" id="ast-basket-icon-svg" x="0px" y="0px" width="100" height="100"
-                      viewBox="826 826 140 140" enable-background="new 826 826 140 140" xml:space="preserve">
-                      <path
-                  </path>
-                  </svg>
-              </p>
-          </div>
-      `
-        newItem.classList.add('item')
-        newItem.setAttribute('data-name', value.id)
-        product_list.appendChild(newItem)
-    })
-}
+// function initApp () {
+
+//   products.forEach((value, key) => {
+//     let newItem = document.createElement('div')
+//     newItem.innerHTML = `
+//       <div class="image">
+// 				<div id="zoom-In">
+// 					<figure>
+//                     <img src="${value.img}" alt="Tranding">
+// 					</figure>
+// 				</div>
+// 			</div>
+
+
+//           <div class="item-content">
+//               <p class="item-name">
+//                   ${value.name}
+//               </p>
+
+//               <p class="item-price">$${value.price}<svg class="cart-icon-item" onclick="addToCart(${key})" style="cursor: pointer;"
+//                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+//                       version="1.1" id="ast-basket-icon-svg" x="0px" y="0px" width="100" height="100"
+//                       viewBox="826 826 140 140" enable-background="new 826 826 140 140" xml:space="preserve">
+//                       <path
+//                   </path>
+//                   </svg>
+//               </p>
+//           </div>
+//       `
+//         newItem.classList.add('item')
+//         newItem.setAttribute('data-name', value.id)
+//         product_list.appendChild(newItem)
+//     })
+// }
 
 initApp()
 let total = document.querySelector('.total-money')
@@ -81,7 +81,7 @@ let quantity = document.querySelector('.items-amount')
 let listCards = []
 let listCard = document.querySelector('.cart-body')
 
-function addToCart (key) {
+function addToCart(key) {
   if (listCards[key] == null) {
     listCards[key] = products[key]
     listCards[key].quantity = 1
@@ -92,7 +92,7 @@ function addToCart (key) {
   reloadCard()
 }
 
-function reloadCard () {
+function reloadCard() {
   listCard.innerHTML = ''
   let count = 0
   let totalPrice = 0
@@ -112,13 +112,11 @@ function reloadCard () {
                       $ ${value.price}
                   </div>
                   <div class="Quantity">
-                      <span onclick="changeQuantity(${key}, ${
-        value.quantity - 1
-      })">-</span>
+                      <span onclick="changeQuantity(${key}, ${value.quantity - 1
+        })">-</span>
                       <span>${value.quantity}</span>
-                      <span onclick="changeQuantity(${key}, ${
-        value.quantity + 1
-      })">+</span>
+                      <span onclick="changeQuantity(${key}, ${value.quantity + 1
+        })">+</span>
                   </div>
               `
       newDiv.classList.add('cart-item')
@@ -130,7 +128,7 @@ function reloadCard () {
   quantity.innerText = count
 }
 
-function changeQuantity (key, quantity) {
+function changeQuantity(key, quantity) {
   if (quantity <= 0) {
     delete listCards[key]
   } else {
@@ -176,31 +174,62 @@ previewBox.forEach(close => {
     preveiwContainer.style.display = 'none'
   }
 })
-    function increaseQuantity(productId) {
-        var quantityElement = document.getElementById('quantity-' + productId);
-        var currentQuantity = parseInt(quantityElement.innerHTML);
-        quantityElement.innerHTML = currentQuantity + 1;
-        updateSession(productId, currentQuantity + 1);
-    }
+// JavaScript function to increase product quantity
+function increaseQuantity(productId, productPrice) {
+  let quantityElement = document.getElementById('quantity-' + productId);
+  let subTotal = document.getElementById('subtotal-' + productId);
+  let total = document.getElementById('total');
 
-    function decreaseQuantity(productId) {
-        var quantityElement = document.getElementById('-' + productId);
-        var currentQuantity = parseInt(quantityElement.innerHTML);
-        if (currentQuantity > 1) {
-            quantityElement.innerHTML = currentQuantity - 1;
-            updateSession(productId, currentQuantity - 1);
-        }
-    }
+  let currentQuantity = parseInt(quantityElement.innerHTML);
+  let newQuantity = currentQuantity + 1;
 
-    function updateSession(productId, newQuantity) {
-        // Send an AJAX request to update session data
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                // Session data updated successfully
-                console.log('Session updated for product ' + productId + ' with quantity ' + newQuantity);
-            }
-        };
-        xhr.open("GET", "update_session.php?productId=" + productId + "&quantity=" + newQuantity, true);
-        xhr.send();
-    }
+  quantityElement.innerHTML = newQuantity;
+
+  let subtotalValue = parseFloat(subTotal.innerText.replace('$', ''));
+  let newSubtotal = subtotalValue + parseFloat(productPrice);
+  subTotal.innerText = '$' + newSubtotal.toFixed(2);
+
+  let currentTotal = parseFloat(total.innerText.replace('$', ''));
+  let newTotal = currentTotal + parseFloat(productPrice);
+  total.innerText = '$' + newTotal.toFixed(2);
+
+  updateSession(productId, 'add');
+}
+
+function decreaseQuantity(productId, productPrice) {
+  let quantityElement = document.getElementById('quantity-' + productId);
+  let subTotal = document.getElementById('subtotal-' + productId);
+  let total = document.getElementById('total');
+
+  let currentQuantity = parseInt(quantityElement.innerHTML);
+  if (currentQuantity > 1) {
+    let newQuantity = currentQuantity - 1;
+
+    quantityElement.innerHTML = newQuantity;
+
+    let subtotalValue = parseFloat(subTotal.innerText.replace('$', ''));
+    let newSubtotal = subtotalValue - parseFloat(productPrice);
+    subTotal.innerText = '$' + newSubtotal.toFixed(2);
+
+    let currentTotal = parseFloat(total.innerText.replace('$', ''));
+    let newTotal = currentTotal - parseFloat(productPrice);
+    total.innerText = '$' + newTotal.toFixed(2);
+
+    updateSession(productId, 'minus');
+  }
+}
+
+
+// JavaScript function to update session with new quantity
+function updateSession(productId, type) {
+  // Send an AJAX request to update session data
+  let xhr = new XMLHttpRequest();
+  let data = {
+    productId: productId,
+    type: type
+  }
+  let data_text = new URLSearchParams(data);
+  let url = "update_session.php?" + data_text;
+  xhr.open("GET", url);
+  xhr.send();
+}
