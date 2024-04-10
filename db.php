@@ -46,6 +46,29 @@ function login($username, $password)
     return $data;
 }
 
+function getData($username)
+{
+    $conn = create_connection();
+    $sql = 'select * from tbl_user where username=?';
+
+    $stm = $conn->prepare($sql);
+    $stm->bind_param("s", $username);
+    if (!$stm->execute()) {
+        return null;
+    }
+
+
+
+    $result  = $stm->get_result();
+    $data = $result->fetch_assoc();
+
+
+    // Check if a user record was found
+    if (!$data) {
+        return null; // Return null if username not found
+    }
+    return $data;
+}
 
 
 // ==== SIGN Up ====  //

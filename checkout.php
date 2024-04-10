@@ -2,25 +2,11 @@
     include 'header.php';
     include 'db.php';
     session_start();
-    $conn = create_connection();
-    $sql = 'select * from tbl_user where username=?';
-
-    $stm = $conn->prepare($sql);
-    $stm->bind_param("s", $username);
-    if (!$stm->execute()) {
-        return null;
-    }
-
-
-
-    $result  = $stm->get_result();
-    $data = $result->fetch_assoc();
-
-
-    // Check if a user record was found
-    if (!$data) {
-        return null; // Return null if username not found
-    }
+    $data = getData($_SESSION['user']);
+    $address = $data['address'];
+    $firstname = $data['firstname'];
+    $lastname = $data['lastname'];
+    $phone = $data['phonenumber'];
     ?>
 
     <script>
@@ -89,11 +75,11 @@
                     <div class="fullname">
                         <div class="label-input">
                             <label for="firstname">First Name</label>
-                            <input type="text" name="firstname" id="firstname" required>
+                            <input value="<?= $firstname?>" type="text" name="firstname" id="firstname" required>
                         </div>
                         <div class="label-input">
                             <label for="lastname">Last Name</label>
-                            <input type="text" name="lastname" id="lastname" required>
+                            <input value="<?= $lastname?>" type="text" name="lastname" id="lastname" required>
                         </div>
                     </div>
 
@@ -101,13 +87,13 @@
                     <!-- address -->
                     <div class="label-input">
                         <label for="address">Address</label>
-                        <input type="text" name="address" id="address" required>
+                        <input value="<?= $address?>" type="text" name="address" id="address" required>
                     </div>
 
                     <!-- phone number -->
                     <div class="label-input">
                         <label for="phone">Phone number</label>
-                        <input type="tel" name="phone" id="phone" required>
+                        <input value="<?= $phone?>" type="tel" name="phone" id="phone" required>
                     </div>
 
                     <h3>Payment method</h3>
@@ -138,7 +124,7 @@
 
 
                     </div>
-                        <button class="placeOrder-btn" type="submit">Place order</button>
+                    <button class="placeOrder-btn" type="submit">Place order</button>
 
                 </form>
 
