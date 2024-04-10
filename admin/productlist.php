@@ -6,21 +6,41 @@ require_once "class/product_class.php";
 
 <?php
 $product = new Product;
-$showProduct = $product->showProduct();
+$showProduct = $product -> showProduct();
 ?>
+
+<script>
+    $('#sort').change(function() {
+        let value = $this.find(':selected').val();
+        
+        $.ajax({
+            url: "product-api.php",
+            type: "POST",
+            data: "value=" + value,
+            beforeSend:function() {
+                $("table").innerhtml("...Waiting...");
+            },
+            success:function(data) {
+                $("table").innerhtml(data);
+                alert(data);
+            }
+        })
+    })
+</script>
 
 <div class="right">
     <div class="product-list">
         <h1>PRODUCTS LIST</h1> <br>
-
-        <label for="sort">Sort </label>
-        .<select class="sort">        
-                <option value="id">ID</option>
-                <option value="category">Category</option>
-                <option value="brand">Brand</option>
-                <option value="name">Name</option>
-                <option value="price">Price</option>
-        </select>
+            <label for="sort">Sort by: </label>
+            <div class="filter">
+                <select class="sort" id ="sort">
+                    <option value="id">ID</option>
+                    <option value="category">Category</option>
+                    <option value="brand">Brand</option>
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                </select>
+            </div>
 
         <table>
             <tr>
@@ -48,20 +68,20 @@ $showProduct = $product->showProduct();
                         <td><?php echo $result['product_name'] ?></td>
                         <td><?php echo $result['product_price'] ?></td>
                         <td>
-                                <?php echo $result['product_desc'] ?>
-                            </td>
+                            <?php echo $result['product_desc'] ?>
+                        </td>
                         <td><img src="uploads/<?php echo $result['product_img'] ?>"></td>
                         <td>
-                                <a class="btn" href="productedit.php?product_id=<?php echo $result['product_id'] ?>">
-                                    Edit
-                                </a>
+                            <a class="btn" href="productedit.php?product_id=<?php echo $result['product_id'] ?>">
+                                Edit
+                            </a>
 
 
                         </td>
                         <td>
-                                <a class="btn" href="productdelete.php?product_id= <?php echo $result['product_id'] ?>">
-                                    Delete
-                                </a>
+                            <a class="btn" href="productdelete.php?product_id= <?php echo $result['product_id'] ?>">
+                                Delete
+                            </a>
 
                         </td>
 
@@ -78,3 +98,4 @@ $showProduct = $product->showProduct();
 </body>
 
 </html>
+

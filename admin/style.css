@@ -270,7 +270,10 @@ img {
 .product-list th {
   padding-bottom: 1.5rem;
 }
-
+select.sort {
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
 
 .product-list table {
   max-width: 100%;

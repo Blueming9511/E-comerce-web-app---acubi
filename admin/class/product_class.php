@@ -75,6 +75,36 @@ class Product {
         return $update;
     }
 
+    public function sortedProductById() {
+        $query = "SELECT * from tbl_product ORDER BY product_id ORDER BY product_id DESC ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+    public function sortedProductByCategory() {
+        $query = "SELECT * from tbl_product ORDER BY product_category ORDER BY product_category DESC ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
+    public function sortedProductByName() {
+        $query = "SELECT * from tbl_product ORDER BY product_name ORDER BY product_name DESC ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
+    public function sortedProductByPrice() {
+        $query = "SELECT * from tbl_product ORDER BY product_price ORDER BY product_price DESC ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+    public function sortedProductByBrand() {
+        $query = "SELECT * from tbl_product ORDER BY product_brand ORDER BY product_brand DESC ";
+        $result = $this -> db -> select($query);
+        return $result;
+    }
+
+    
+
 
     public function showCategory() {
         $query = "SELECT * from tbl_category ORDER BY category_id";
