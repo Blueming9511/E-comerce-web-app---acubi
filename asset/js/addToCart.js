@@ -176,26 +176,31 @@ previewBox.forEach(close => {
     preveiwContainer.style.display = 'none'
   }
 })
+    function increaseQuantity(productId) {
+        var quantityElement = document.getElementById('quantity-' + productId);
+        var currentQuantity = parseInt(quantityElement.innerHTML);
+        quantityElement.innerHTML = currentQuantity + 1;
+        updateSession(productId, currentQuantity + 1);
+    }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const addBtn = document.querySelector('.add');
-  const reBtn = document.querySelector('.minus');
-  const quantitySpan = document.querySelector('.quantity');
-  const price = document.querySelector('.product-price');
+    function decreaseQuantity(productId) {
+        var quantityElement = document.getElementById('-' + productId);
+        var currentQuantity = parseInt(quantityElement.innerHTML);
+        if (currentQuantity > 1) {
+            quantityElement.innerHTML = currentQuantity - 1;
+            updateSession(productId, currentQuantity - 1);
+        }
+    }
 
-  addBtn.addEventListener('click', function() {
-      let currentQuantity = parseInt(quantitySpan.textContent);
-      quantitySpan.textContent = currentQuantity + 1;
-      let currentPrice = parseFloat(price.textContent.replace('$', ''));
-      price.textContent = '$' + (currentPrice + currentPrice).toFixed(2);
-  });
-
-  reBtn.addEventListener('click', function() {
-      let currentQuantity = parseInt(quantitySpan.textContent);
-      if (currentQuantity > 1) {
-          quantitySpan.textContent = currentQuantity - 1;
-          let currentPrice = parseFloat(price.textContent.replace('$', ''));
-          price.textContent = '$' + (currentPrice - currentPrice).toFixed(2);
-      }
-  });
-});
+    function updateSession(productId, newQuantity) {
+        // Send an AJAX request to update session data
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Session data updated successfully
+                console.log('Session updated for product ' + productId + ' with quantity ' + newQuantity);
+            }
+        };
+        xhr.open("GET", "update_session.php?productId=" + productId + "&quantity=" + newQuantity, true);
+        xhr.send();
+    }

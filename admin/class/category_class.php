@@ -10,8 +10,9 @@ class Category {
         $this -> db = new Database();
     }
 
-    public function insertCategory($categoryName) {
-        $query = "INSERT INTO tbl_category (category_name) VALUES ('$categoryName')";
+    public function insertCategory($categoryName, $categoryImg) {
+        move_uploaded_file($categoryImg['tmp_name'], "uploads/".$categoryImg['name']);
+        $query = "INSERT INTO tbl_category (category_name, category_img) VALUES ($categoryName, $categoryImg)";
         $result = $this -> db -> insert($query);
         return $result;
     }
