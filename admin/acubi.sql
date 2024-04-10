@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
+<<<<<<< HEAD
 -- Thời gian đã tạo: Th4 10, 2024 lúc 05:57 AM
+=======
+-- Thời gian đã tạo: Th4 10, 2024 lúc 06:00 AM
+>>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -237,9 +241,9 @@ CREATE TABLE `tbl_user` (
 -- Đang đổ dữ liệu cho bảng `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `email`, `password`, `username`, `firstname`, `lastname`, `address`, `phonenumber`) VALUES
-(1, 'nguyennguyen8343@gmail.com', '123456', 'itznguyen', 'nguyen', 'ta', 'hcmc', '0329868603'),
-(2, 'hello@gmail.com', 'admin123', 'admin', 'quan tri', 'vien`', 'hn', '0329865703');
+INSERT INTO `tbl_user` (`userID`, `username`, `email`, `password`, `firstname`, `lastname`, `phonenumber`, `address`, `activated`, `activate_token`) VALUES
+(15, 'admin', '1234@gmail.com', '$2y$10$1BYUI.OK9AfqTWTFtldXieUSDwRut81jpTaySlgV3Txrch.my.gzO', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '4670f5ea868922005e8553ca8a7dfda0'),
+(16, 'Nguyen', 'alanswift094@gmail.com', '$2y$10$yqZ6rFB8ykcTL7Dk5lm4BOj2fMli7ybKpl1Had03hWtV73SNIEm7G', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -323,9 +327,21 @@ ALTER TABLE `tbl_product`
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product_bought`
+<<<<<<< HEAD
 --
 ALTER TABLE `tbl_product_bought`
   MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+=======
+--
+ALTER TABLE `tbl_product_bought`
+  MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,9 +26,9 @@
         <link rel="stylesheet" href="asset/style/checkout.css">
         <link rel="stylesheet" href="asset/style/item.css">
         <link rel="stylesheet" href="asset/style/ProductCard.css">
-        <link rel="stylesheet" href="asset/style/shop.css">
         <link rel="stylesheet" href="asset/style/top_bottom.css">
         <link rel="stylesheet" href="asset/style/productDetails.css">
+        <link rel="stylesheet" href="asset/style/category.css">
         <link rel="stylesheet" href="asset/style/order.css">
         <link rel="stylesheet" href="asset/slider/slider.css">
         <script defer src="asset/slider/script.js"></script>
@@ -59,8 +59,15 @@
                     <div id="myDropdown" class="dropdown-content" style="display: none; margin-left: 10px;  transition: all 0.4s ease-in-out;">
                         <a href="index.php" class="home_page">HOME</a>
                         <a href="shop.php" class="shop_page">SHOP</a>
-                        <a href="orderComplete.php" class="yourOrder_page">YOUR ORDER</a>
+                        <a href="cart.php" class="yourOrder_page">YOUR CART</a>
                         <a href="about.php" class="about_page">ABOUT</a>
+                        <?php
+                        if (isset($_SESSION['user']) && $isAdmin === true) { ?>
+
+                            <a href="admin/productlist.php" class="admin_page">ADMIN</a>
+                        <?php
+                        }
+                        ?>
                     </div>
 
                 </div>
@@ -70,8 +77,15 @@
                 <nav>
                     <a href="index.php" id="home_page">HOME</a>
                     <a href="shop.php" id="shop_page">SHOP</a>
-                    <a href="orderComplete.php" id="yourOrder_page">YOUR ORDER</a>
+                    <a href="cart.php" class="yourOrder_page">YOUR CART</a>
                     <a href="about.php" id="about_page">ABOUT</a>
+                    <?php
+                    if (isset($_SESSION['user']) && $isAdmin === true) { ?>
+
+                        <a href="admin/productlist.php" class="admin_page">ADMIN</a>
+                    <?php
+                    }
+                    ?>
                 </nav>
                 <!-- Logo -->
                 <div class="logo">
@@ -106,7 +120,6 @@
 
                             <ul class="cart-body">
                                 <table class="cart-table">
-                                
                                 </table>
                             </ul>
 
@@ -121,8 +134,8 @@
                             </div>
 
                             <div class="cart-submit flex-center">
-                                <a href="cart.html" class="view-cart-button">View cart</a>
-                                <a href="checkout.html" class="checkout-btn">Check out</a>
+                                <a href="cart.php" class="view-cart-button">View cart</a>
+                                <a href="checkout.php" class="checkout-btn">Check out</a>
                             </div>
                         </div>
                     </div>
