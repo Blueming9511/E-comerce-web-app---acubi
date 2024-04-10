@@ -9,7 +9,7 @@ include 'header.php';
     </div>
 
     <div class="process">
-        <a id="shopping-cart" href="cart.php">SHOPPING CART</a> > <a id="checkout-details" href="checkout.php">CHECKOUT DETAILS</a> > <a id="order-complete" href="">ORDER COMPLETE</a>
+        <a id="shopping-cart" href="cart.php">SHOPPING CART</a> > <a id="checkout-details" style="color: #00000051;" href="checkout.php">CHECKOUT DETAILS</a> > <a id="order-complete" href="">ORDER COMPLETE</a>
     </div>
 
     <div class="cart-wrapper">

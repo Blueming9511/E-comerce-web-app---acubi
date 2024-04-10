@@ -14,14 +14,17 @@
     height: fit-content;
 }
 
+.category {
+    margin-bottom: 1em;
+}
+
 .category-name {
     font-size: 50px;
-    position: absolute;
-    bottom: 70px;
+    text-align: end;
     /* Positions the element 10px from the bottom */
     left: 50px;
     /* Positions the element 10px from the left */
-    color: white;
+    color: rgb(0, 0, 0);
     z-index: 1;
     /* Adjust if needed for overlapping elements */
 }
@@ -30,4 +33,10 @@
     font-size: 50px;
     margin-left: .2em;
     font-family: var(--emphasized-font);
+}
+
+@media screen and (max-width: 500px){  
+    .category-name{
+        font-size: 20px;
+    }
 }

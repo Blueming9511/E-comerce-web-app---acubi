@@ -179,6 +179,51 @@ function sendActivateEmail($email, $token)
         return false;
     }
 }
+function sendThankYouEmail($email, $username)
+{
+    // Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        // Server settings
+        // Enable verbose debug output only during development (comment out in production)
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                           // Set the SMTP server
+        $mail->SMTPAuth   = true;                                      // Enable SMTP authentication
+        $mail->Username   = 'nguyennguyen8343@gmail.com';                // Replace with your actual email
+        $mail->Password   = 'mqiyzomyyyzxgnis';                     // Replace with your actual password (consider using app passwords)
+        $mail->SMTPSecure = 'ssl';                                     // Enable implicit TLS encryption
+        $mail->Port       = 465;                                       // TCP port to connect to
+
+        // Recipients
+        $mail->setFrom('nguyennguyen8343@gmail.com', 'ACUBI team');  // Set sender email and name
+        $mail->addAddress($email, 'Recipient');                        // Add recipient email and name (optional)
+
+        // Content
+        $mail->isHTML(true);                                           // Set email format to HTML
+        $mail->Subject = 'THANK YOU FOR SHOPPING AT ACUBI';
+        $mail->Body = "Dear $username,<br><br>
+
+        We would like to express our sincerest gratitude for choosing Acubi for your shopping needs. Your support is what motivates us to strive for excellence and to continually improve our services.<br><br>
+        
+        We hope you had a pleasant shopping experience and that you're satisfied with your purchases. At Acubi, we take pride in offering high-quality products and exceptional customer service.<br><br>
+        
+        Remember, our team is always here to assist you with any inquiries or concerns you may have. Feel free to reach out to us at any time.<br><br>
+        
+        Once again, thank you for shopping at Acubi. We look forward to serving you again soon!<br><br>
+        
+        Best Regards,<br>
+        The Acubi Team";
+        $mail->send();
+        
+        return true;
+    } catch (Exception $e) {
+        // Log the exception for debugging (optional)
+        return false;
+    }
+}
 
 
 function activeAccount($email, $token)
