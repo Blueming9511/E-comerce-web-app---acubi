@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 include "sidebar.php";
-include "class/product_class.php";
+require_once "class/product_class.php";
 ?>
 
 <?php

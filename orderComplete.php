@@ -92,10 +92,6 @@ $total = $totalResult->fetch_row()[0];
 <?php
 unset($_SESSION['itemAmount']);
 unset($_SESSION['totalAmount']);
-foreach ($_SESSION as $key => $value) {
-    echo "$key: $value<br>";
-}
-
 ?>
 
 <?php

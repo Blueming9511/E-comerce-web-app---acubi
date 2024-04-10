@@ -3,13 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
-<<<<<<< HEAD
--- Thời gian đã tạo: Th4 10, 2024 lúc 05:57 AM
-=======
--- Thời gian đã tạo: Th4 10, 2024 lúc 06:00 AM
->>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
+-- Thời gian đã tạo: Th4 10, 2024 lúc 05:59 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Phiên bản PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,7 +91,16 @@ INSERT INTO `tbl_bill` (`bill_id`, `bill_date`, `payment_method`, `first_name`, 
 (47, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
 (48, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
 (49, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
-(50, '2024-04-10', 'Bank-transfer', 'Hii', 'ba', 'dsd', 'dsd', 0);
+(50, '2024-04-10', 'Bank-transfer', 'Hii', 'ba', 'dsd', 'dsd', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'cash', 'Dong', 'Nghi', 'PHUOC BUU', '0911248154', 0),
+(0, '2024-04-10', 'cash', 'Dong', 'Nghi', 'PHUOC BUU', '0911248154', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'cash', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0),
+(0, '2024-04-10', 'Bank-transfer', 'TẠ', 'NGUYÊN', 'ấp thanh bình 1', '0918988154', 0);
 
 -- --------------------------------------------------------
 
@@ -123,7 +128,22 @@ INSERT INTO `tbl_bill_product` (`bill_product_id`, `bill_id`, `product_id`, `pro
 (4, 50, 11, 'Korean full set', 1, 50),
 (5, 50, 10, 'Y2k Black crop top', 2, 44),
 (6, 50, 7, 'Y2k shirt long sleeves', 1, 44),
-(7, 50, 3, 'Men cotton shirt', 2, 24);
+(7, 50, 3, 'Men cotton shirt', 2, 24),
+(0, 50, 3, 'Men cotton shirt', 1, 12),
+(0, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(0, 50, 3, 'Men cotton shirt', 1, 12),
+(0, 50, 12, 'Men Korean outfit', 8, 528),
+(0, 50, 11, 'Korean full set', 1, 50),
+(0, 50, 10, 'Y2k Black crop top', 1, 22),
+(0, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(0, 50, 3, 'Men cotton shirt', 8, 96),
+(0, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(0, 50, 3, 'Men cotton shirt', 1, 12),
+(0, 50, 10, 'Y2k Black crop top', 1, 22),
+(0, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(0, 50, 12, 'Men Korean outfit', 1, 66),
+(0, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(0, 50, 7, 'Y2k shirt long sleeves', 2, 88);
 
 -- --------------------------------------------------------
 
@@ -132,7 +152,7 @@ INSERT INTO `tbl_bill_product` (`bill_product_id`, `bill_id`, `product_id`, `pro
 --
 
 CREATE TABLE `tbl_brand` (
-  `brand_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL  PRIMARY KEY,
   `category_id` int(11) NOT NULL,
   `brand_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -142,7 +162,8 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
-(2, 2, 'Y2K');
+(2, 2, 'Y2K'),
+(0, 0, 'Y2K');
 
 -- --------------------------------------------------------
 
@@ -151,7 +172,7 @@ INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
 --
 
 CREATE TABLE `tbl_category` (
-  `category_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL PRIMARY KEY,
   `category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `category_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -161,8 +182,8 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_img`) VALUES
-(1, 'TOP', ''),
-(2, 'BOTTOM', '');
+(1, 'TOP', 'top.png'),
+(2, 'BOTTOM', 'bottom.png');
 
 -- --------------------------------------------------------
 
@@ -227,14 +248,16 @@ INSERT INTO `tbl_product_bought` (`product_bought_id`, `product_id`, `product_im
 --
 
 CREATE TABLE `tbl_user` (
-  `user_id` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `userID` int(10) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `address` varchar(150) NOT NULL,
-  `phonenumber` varchar(12) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `phonenumber` varchar(11) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `activated` int(1) NOT NULL DEFAULT 0,
+  `activate_token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -243,93 +266,28 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`userID`, `username`, `email`, `password`, `firstname`, `lastname`, `phonenumber`, `address`, `activated`, `activate_token`) VALUES
 (15, 'admin', '1234@gmail.com', '$2y$10$1BYUI.OK9AfqTWTFtldXieUSDwRut81jpTaySlgV3Txrch.my.gzO', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '4670f5ea868922005e8553ca8a7dfda0'),
-(16, 'Nguyen', 'alanswift094@gmail.com', '$2y$10$yqZ6rFB8ykcTL7Dk5lm4BOj2fMli7ybKpl1Had03hWtV73SNIEm7G', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '');
+(16, 'Nguyen', 'alanswift094@gmail.com', '$2y$10$yqZ6rFB8ykcTL7Dk5lm4BOj2fMli7ybKpl1Had03hWtV73SNIEm7G', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, ''),
+(17, 'Donghi_SadGirl123', '12345@gmail.com', '$2y$10$LZNPN1lsoxuPsdelKC6liODwmQJSHzodPGy4/xxuX6MOjF99B8tvG', 'Dong', 'Nghi', '0911248154', 'PHUOC BUU', 1, '936c2128a04eaf39e64fd58689a11fe5');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Chỉ mục cho bảng `tbl_bill`
---
-ALTER TABLE `tbl_bill`
-  ADD PRIMARY KEY (`bill_id`);
-
---
--- Chỉ mục cho bảng `tbl_bill_product`
---
-ALTER TABLE `tbl_bill_product`
-  ADD PRIMARY KEY (`bill_product_id`);
-
---
--- Chỉ mục cho bảng `tbl_brand`
---
-ALTER TABLE `tbl_brand`
-  ADD PRIMARY KEY (`brand_id`);
-
---
--- Chỉ mục cho bảng `tbl_category`
---
-ALTER TABLE `tbl_category`
-  ADD PRIMARY KEY (`category_id`);
-
---
--- Chỉ mục cho bảng `tbl_product`
---
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Chỉ mục cho bảng `tbl_product_bought`
---
-ALTER TABLE `tbl_product_bought`
-  ADD PRIMARY KEY (`product_bought_id`);
-
---
 -- Chỉ mục cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_bill`
+-- AUTO_INCREMENT cho bảng `tbl_user`
 --
-ALTER TABLE `tbl_bill`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
---
--- AUTO_INCREMENT cho bảng `tbl_bill_product`
---
-ALTER TABLE `tbl_bill_product`
-  MODIFY `bill_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT cho bảng `tbl_brand`
---
-ALTER TABLE `tbl_brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT cho bảng `tbl_category`
---
-ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT cho bảng `tbl_product`
---
-ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT cho bảng `tbl_product_bought`
---
-ALTER TABLE `tbl_product_bought`
-  MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `tbl_user`
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

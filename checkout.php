@@ -15,7 +15,6 @@
         $lastname = '';
         $phone = '';
     }
-    echo "<script>  alert(" . json_encode($data) . ");</script>";
     ?>
 
     <script>

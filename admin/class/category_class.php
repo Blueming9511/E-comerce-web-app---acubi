@@ -20,7 +20,7 @@ class Category
 
         move_uploaded_file($categoryImgTmpName, $categoryImgPath);
 
-        $query = "INSERT INTO tbl_category (category_name, category_img) VALUES ('$categoryName', '$categoryImgPath')";
+        $query = "INSERT INTO tbl_category (category_name, category_img) VALUES ('$categoryName', '$categoryImgName')";
         $result = $this->db->insert($query);
         return $result;
     }

@@ -7,10 +7,6 @@ include "class/brand_class.php";
 <?php
 $brand = new Brand;
 $showbrand = $brand->showBrand();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $categoryName = $_POST['categoryName'];
-  $insert = $category->insertCategory($categoryName);
-}
 ?>
 
 <div class="right">
@@ -25,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <th colspan="2">Action</th>
       </tr>
       <?php
+
       if ($showbrand) {
         $i = 0;
         while ($result = $showbrand->fetch_assoc()) {
