@@ -150,7 +150,7 @@ function sendActivateEmail($email, $token)
         // Content
         $mail->isHTML(true);                                           // Set email format to HTML
         $mail->Subject = 'ACUBI: Verify your account';
-        $mail->Body    = "Click <a href='http://localhost/web/shop/activate.php?email=$email&token=$token'>here</a> to verify your account"; 
+        $mail->Body    = "Click <a href='http://localhost/shop/activate.php?email=$email&token=$token'>here</a> to verify your account"; 
                         //change the href link corresponse with your local address
         $mail->send();
         return true;

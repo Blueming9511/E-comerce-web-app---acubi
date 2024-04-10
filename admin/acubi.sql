@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 09, 2024 lúc 10:42 AM
+-- Thời gian đã tạo: Th4 10, 2024 lúc 06:00 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -20,6 +20,106 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `acubi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_bill`
+--
+
+CREATE TABLE `tbl_bill` (
+  `bill_id` int(11) NOT NULL,
+  `bill_date` date NOT NULL DEFAULT current_timestamp(),
+  `payment_method` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `first_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `phone_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `total_money` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_bill`
+--
+
+INSERT INTO `tbl_bill` (`bill_id`, `bill_date`, `payment_method`, `first_name`, `last_name`, `address`, `phone_number`, `total_money`) VALUES
+(2, '2024-04-09', 'Bank-transfer', 'eqe', 'ewqe', 'eqwe', 'eqweq', 0),
+(3, '2024-04-09', 'Bank-transfer', 'eqe', 'ewqe', 'eqwe', 'eqweq', 0),
+(4, '2024-04-09', 'Bank-transfer', 'eqe', 'ewqe', 'eqwe', 'eqweq', 0),
+(5, '2024-04-09', 'Bank-transfer', 'eqe', 'ewqe', 'eqwe', 'eqweq', 0),
+(6, '2024-04-09', 'Bank-transfer', 'eqe', 'ewqe', 'eqwe', 'ewqeq', 0),
+(7, '2024-04-09', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqe', 0),
+(8, '2024-04-09', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqe', 0),
+(9, '2024-04-09', 'Bank-transfer', 'eqwe', 'ewqe', 'qewqe', 'ewqe', 0),
+(10, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(11, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(12, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(13, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(14, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(15, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(16, '2024-04-10', 'Bank-transfer', 'eqwe', 'ewq', 'eqwe', 'eqw', 0),
+(17, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(18, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(19, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(20, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(21, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(22, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(23, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(24, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(25, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(26, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(27, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwhe', 'eqwje', 'ewqe', 0),
+(28, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(29, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(30, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(31, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(32, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(33, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(34, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(35, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(36, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(37, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'eqwe', 0),
+(38, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(39, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(40, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(41, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(42, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(43, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(44, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(45, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(46, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(47, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(48, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(49, '2024-04-10', 'Bank-transfer', 'eqwe', 'eqwe', 'eqwe', 'ewqeq', 0),
+(50, '2024-04-10', 'Bank-transfer', 'Hii', 'ba', 'dsd', 'dsd', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_bill_product`
+--
+
+CREATE TABLE `tbl_bill_product` (
+  `bill_product_id` int(11) NOT NULL,
+  `bill_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_bill_product`
+--
+
+INSERT INTO `tbl_bill_product` (`bill_product_id`, `bill_id`, `product_id`, `product_name`, `quantity`, `price`) VALUES
+(1, 49, 11, 'Korean full set', 1, 50),
+(2, 49, 10, 'Y2k Black crop top', 1, 22),
+(3, 49, 3, 'Men cotton shirt', 2, 24),
+(4, 50, 11, 'Korean full set', 1, 50),
+(5, 50, 10, 'Y2k Black crop top', 2, 44),
+(6, 50, 7, 'Y2k shirt long sleeves', 1, 44),
+(7, 50, 3, 'Men cotton shirt', 2, 24);
 
 -- --------------------------------------------------------
 
@@ -48,16 +148,17 @@ INSERT INTO `tbl_brand` (`brand_id`, `category_id`, `brand_name`) VALUES
 
 CREATE TABLE `tbl_category` (
   `category_id` int(11) NOT NULL,
-  `category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `category_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
-INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
-(1, 'TOP'),
-(2, 'BOTTOM');
+INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_img`) VALUES
+(1, 'TOP', ''),
+(2, 'BOTTOM', '');
 
 -- --------------------------------------------------------
 
@@ -94,6 +195,30 @@ INSERT INTO `tbl_product` (`product_id`, `category_id`, `brand_id`, `product_nam
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tbl_product_bought`
+--
+
+CREATE TABLE `tbl_product_bought` (
+  `product_bought_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` double NOT NULL,
+  `subtotal` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_product_bought`
+--
+
+INSERT INTO `tbl_product_bought` (`product_bought_id`, `product_id`, `product_img`, `product_name`, `quantity`, `price`, `subtotal`) VALUES
+(5, 11, 'i8.jpg', 'Korean full set', 4, 50, 250),
+(6, 3, 'm6.jpg', 'Men cotton shirt', 1, 12, 12);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_user`
 --
 
@@ -115,14 +240,24 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`userID`, `username`, `email`, `password`, `firstname`, `lastname`, `phonenumber`, `address`, `activated`, `activate_token`) VALUES
-(2, 'randomPerson', 'random@gmail.com', '$2y$10$nL7SEBU6mOwefyKBWEfDdO5z0qSO0oegCGR01Imihr7r26bwC3nwC', 'Van', 'Th', '1234567890', '163 QL55, TT. Phước Bửu, Xuyên Mộc, Bà Rịa - Vũng Tàu', 0, 'c0bbcf54885900ffa3005d42eb0d32a5'),
-(3, 'ChanhHy', 'Hy@gmail.com', '$2y$10$yix0k/WBtyo3HqqujLxPseRJGrkb0wZen1tmyqmq92CQpgx/Bys72', 'Hy', 'Huynh', '12347590', 'Ho chi Minh', 0, 'd2c6726f992382256fa6a6cd8abaa7e0'),
-(4, 'Yenne', 'YenYen@gmail.com', '$2y$10$lyPJ.CQc5qfacg2rCbIDjuhy8ihGTq5sE8Y39H07p2Vo2VtF5QOZC', 'Yen', 'Nguyen', '1082917381', 'HCM', 0, '4fe4957d158b6f1f88b36937cc24712b'),
-(5, 'Nguyenne', 'nguyennguyen8343@gmail.com', '$2y$10$X1mkRUMcKekJV1uwAnWFyunDPTF5MQwTyB9cK/tYg3QTVne0cTI42', 'Nguyen', 'Ta', '0918988154', 'ấp thanh bình 1', 0, '6d7c3e1a1d6b6736af3e53f87ef5b35d');
+(15, 'admin', '1234@gmail.com', '$2y$10$1BYUI.OK9AfqTWTFtldXieUSDwRut81jpTaySlgV3Txrch.my.gzO', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '4670f5ea868922005e8553ca8a7dfda0'),
+(16, 'Nguyen', 'alanswift094@gmail.com', '$2y$10$yqZ6rFB8ykcTL7Dk5lm4BOj2fMli7ybKpl1Had03hWtV73SNIEm7G', 'TẠ', 'NGUYÊN', '0918988154', 'ấp thanh bình 1', 1, '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `tbl_bill`
+--
+ALTER TABLE `tbl_bill`
+  ADD PRIMARY KEY (`bill_id`);
+
+--
+-- Chỉ mục cho bảng `tbl_bill_product`
+--
+ALTER TABLE `tbl_bill_product`
+  ADD PRIMARY KEY (`bill_product_id`);
 
 --
 -- Chỉ mục cho bảng `tbl_brand`
@@ -143,6 +278,12 @@ ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Chỉ mục cho bảng `tbl_product_bought`
+--
+ALTER TABLE `tbl_product_bought`
+  ADD PRIMARY KEY (`product_bought_id`);
+
+--
 -- Chỉ mục cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
@@ -151,6 +292,18 @@ ALTER TABLE `tbl_user`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_bill`
+--
+ALTER TABLE `tbl_bill`
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_bill_product`
+--
+ALTER TABLE `tbl_bill_product`
+  MODIFY `bill_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_brand`
@@ -171,10 +324,16 @@ ALTER TABLE `tbl_product`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT cho bảng `tbl_product_bought`
+--
+ALTER TABLE `tbl_product_bought`
+  MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT cho bảng `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

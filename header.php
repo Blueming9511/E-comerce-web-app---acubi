@@ -59,7 +59,7 @@
                     <div id="myDropdown" class="dropdown-content" style="display: none; margin-left: 10px;  transition: all 0.4s ease-in-out;">
                         <a href="index.php" class="home_page">HOME</a>
                         <a href="shop.php" class="shop_page">SHOP</a>
-                        <a href="orderComplete.php" class="yourOrder_page">YOUR ORDER</a>
+                        <a href="cart.php" class="yourOrder_page">YOUR CART</a>
                         <a href="about.php" class="about_page">ABOUT</a>
                         <?php
                         if (isset($_SESSION['user']) && $isAdmin === true) { ?>
@@ -77,7 +77,7 @@
                 <nav>
                     <a href="index.php" id="home_page">HOME</a>
                     <a href="shop.php" id="shop_page">SHOP</a>
-                    <a href="orderComplete.php" id="yourOrder_page">YOUR ORDER</a>
+                    <a href="cart.php" class="yourOrder_page">YOUR CART</a>
                     <a href="about.php" id="about_page">ABOUT</a>
                     <?php
                     if (isset($_SESSION['user']) && $isAdmin === true) { ?>
@@ -134,8 +134,8 @@
                             </div>
 
                             <div class="cart-submit flex-center">
-                                <a href="cart.html" class="view-cart-button">View cart</a>
-                                <a href="checkout.html" class="checkout-btn">Check out</a>
+                                <a href="cart.php" class="view-cart-button">View cart</a>
+                                <a href="checkout.php" class="checkout-btn">Check out</a>
                             </div>
                         </div>
                     </div>
