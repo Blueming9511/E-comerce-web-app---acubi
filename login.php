@@ -1,62 +1,43 @@
 <?php
-function create_connection()
-{
-  $conn = mysqli_connect('localhost', 'root', '', 'acubi');
-  if ($conn->connect_error) {
-    die('Cannot connect to the server' . $conn->connect_error);
-  }
-  return $conn;
-}
-?>
-<?php
-
-function login($username, $password)
-{
-  $conn = create_connection();
-  $sql = 'select * from tbl_user where username=?';
-  $stm = $conn->prepare($sql);
-  $stm->bind_param("s", $username);
-  if (!$stm->execute()) return false;
-
-  $result  = $stm->get_result();
-
-  if ($result->num_rows !== 1) return false;
-
-  $data = $result->fetch_assoc();
-
-  $user_pwd = $data["password"];
-  if ($user_pwd !== $password) return false;
-  return true;
-}
-
-?>
-
-
-<?php
-
+include 'db.php';
 
 session_start();
 
 
-$user = '';
-$pass = '';
-$error = '';
+$user_login = '';
+$pas_logins = '';
+$error_login = '';
 
-
+// LOign 
 
 // Check if username and password are set
 if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
+
   $user = $_POST["username_login"];
   $pass = $_POST["pass_login"];
 
   // phan quyen admin
   if ($user === "admin" &&  $pass == "admin123") {
+
+    $_SESSION["user"] = "admin";
     header("Location: admin/categorylist.php");
-  } else if (login($user, $pass)) {
-    $_SESSION['user'] = $user;
-    header("Location: index.php");
   } else {
-    $error = 'Username or Password incorrect!';
+
+    $data = login($user, $pass);
+    if ($data) {
+
+      $_SESSION['user'] = $user;
+      $_SESSION['name'] = $data['firstname'] . ' ' . $data['lastname'];
+      if ($data['activated'] == 0) {
+        $error = 'Please vertify your account!';
+      } else {
+        header("Location: index.php");
+        exit();
+      }
+
+    } else {
+      $error = 'Username or Password incorrect!';
+    }
   }
 }
 
@@ -90,14 +71,12 @@ if (
   $address = $_POST['address_signup'];
 
   // register new account
-  $result = register($user_signup, $email_signup, $pass_signup, $firstname, $lastname, $phonenumber, $address );
+  $result = register($user_signup, $email_signup, $pass_signup, $firstname, $lastname, $phonenumber, $address);
   if ($result['code'] == 0) {
     // success
-  }
-  else if($result['code'] == 1) {
+  } else if ($result['code'] == 1) {
     $error_signup = 'This email is already exist!';
-  }
-  else{
+  } else {
     $error_signup = 'An error occured. Please try again!';
   }
 }
@@ -133,8 +112,8 @@ if (
       <div class="signin-signup">
         <form novalidate onsubmit="return validateSignIn()" class="sign-in-form" id="signInForm" method="post">
 
-        <!-- ======================== LOGIN ===============================-->
-        <h2 class="title">Login</h2>
+          <!-- ======================== LOGIN ===============================-->
+          <h2 class="title">Login</h2>
 
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -223,7 +202,6 @@ if (
           <p>
             Create an account now!
           </p>
-          <button class="btn transparent" id="sign-up-btn">
           <button class="btn transparent" id="sign-up-btn">
             Sign up
           </button>
