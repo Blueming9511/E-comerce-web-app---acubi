@@ -11,7 +11,17 @@ $showProduct = $product->showProduct();
 
 <div class="right">
     <div class="product-list">
-        <h1>PRODUCTS LIST</h1>
+        <h1>PRODUCTS LIST</h1> <br>
+
+        <label for="sort">Sort </label>
+        .<select class="sort">        
+                <option value="id">ID</option>
+                <option value="category">Category</option>
+                <option value="brand">Brand</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+        </select>
+
         <table>
             <tr>
                 <th>No.</th>

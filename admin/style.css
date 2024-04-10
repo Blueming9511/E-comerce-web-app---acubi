@@ -254,6 +254,7 @@ img {
 
 .product-list table {
   border-collapse: collapse;
+  height: 100vh;
 }
 
 .product-list tr{
@@ -273,7 +274,7 @@ img {
 
 .product-list table {
   max-width: 100%;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 .product-list td:nth-child(9) {
