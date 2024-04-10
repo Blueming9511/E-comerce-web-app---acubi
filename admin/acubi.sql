@@ -327,21 +327,9 @@ ALTER TABLE `tbl_product`
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product_bought`
-<<<<<<< HEAD
 --
 ALTER TABLE `tbl_product_bought`
   MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-=======
---
-ALTER TABLE `tbl_product_bought`
-  MODIFY `product_bought_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT cho bảng `tbl_user`
---
-ALTER TABLE `tbl_user`
-  MODIFY `userID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
->>>>>>> ecb62c1bf38895c9e3f6087af1c231adb7a8666b
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

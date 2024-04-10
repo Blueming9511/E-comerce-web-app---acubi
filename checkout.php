@@ -1,12 +1,21 @@
     <?php
     include 'header.php';
-    include 'db.php';
+    require_once 'db.php';
     session_start();
     $data = getData($_SESSION['user']);
-    $address = $data['address'];
-    $firstname = $data['firstname'];
-    $lastname = $data['lastname'];
-    $phone = $data['phonenumber'];
+    if(isset($data)) {
+        $address = $data['address'];
+        $firstname = $data['firstname'];
+        $lastname = $data['lastname'];
+        $phone = $data['phonenumber'];
+    }
+    else {
+        $address = '';
+        $firstname = '';
+        $lastname = '';
+        $phone = '';
+    }
+    echo "<script>  alert(" . json_encode($data) . ");</script>";
     ?>
 
     <script>

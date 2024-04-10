@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+require_once 'admin/class/category_class.php';
 ?>
 <main class="header-body" style="padding-top: 7em;">
 
@@ -10,9 +11,20 @@ include 'header.php';
      
         <div class="categories">
             <div class="category">
-                <h1 class="category-name">TOP</h1>
-                <a href="top.php" class="category-a"> <img src="asset/shop/img/top.png" alt="" srcset=""></a>
+                <?php 
+                $category = new Category;
+                $categories = $category -> showCategory();
+                if ($categories) {
+                    while($cate = $categories->fetch_assoc()) {
+                
+                ?>
+                <h1 class="category-name"><?php echo $cate['category_name'] ?></h1>
+                <a href="top.php" class="category-a"><img src="admin/<?php echo $cate['category_img'] ?>" alt="" srcset=""></a>
             </div>
+                <?php 
+                    }
+                }
+                ?>
 
         </div>
     </div>

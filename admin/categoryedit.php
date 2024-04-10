@@ -33,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Add Category</h1>
         <form action="" method="POST">
             <label for="categoryName">Enter category <span style="color: tomato;">*</span></label><br>
-            <input type="text" name="categoryName" id="" placeholder="" value="<?php echo $result['category_name'] ?>" require>
-            <label for="categoryImg">Choose category image <span style="color: tomato;">*</span></label><br></label><br>
+            <input type="text" name="categoryName" id="" placeholder="" value="<?php echo $result['category_name'] ?>" required> <br>
+            <label for="categoryImg">Choose category image <span style="color: tomato;">*</span></label><br>
             <input type="file" name="caategoryImg" require>
             <button type="submit">Edit</button>
         </form>

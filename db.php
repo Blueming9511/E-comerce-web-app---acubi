@@ -49,15 +49,12 @@ function login($username, $password)
 function getData($username)
 {
     $conn = create_connection();
-    $sql = 'select * from tbl_user where username=?';
-
+    $sql = 'SELECT * FROM tbl_user WHERE username=?';
     $stm = $conn->prepare($sql);
     $stm->bind_param("s", $username);
     if (!$stm->execute()) {
         return null;
     }
-
-
 
     $result  = $stm->get_result();
     $data = $result->fetch_assoc();
