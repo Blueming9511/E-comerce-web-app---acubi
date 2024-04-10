@@ -8,7 +8,7 @@ include 'db.php';
 session_start();
 // send thank u email
 $data = getData($_SESSION['user']);
-sendThankYouEmail($data['email'], $data['firstname']);
+sendThankYouEmail($data['email'], $data['username']);
 
 
 $billProduct = new BillProduct;
