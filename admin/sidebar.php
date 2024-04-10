@@ -18,6 +18,10 @@
           <li><a href="productadd.php">Add Product</a></li>
           <li><a href="productlist.php">Product List</a></li>
         </ul>
+        
+        <ul>
+          <li><a href="../index.php">Come back to Home page</a></li>
+        </ul>
       </ul>
       <style>
         li div{
