@@ -1,6 +1,5 @@
-
-    <!-- ==== FOOOTER ==== -->
-    <footer class="footer">
+<!-- ==== FOOOTER ==== -->
+<footer class="footer">
     <div class="footer__addr">
         <h1 class="footer__logo">Acubi</h1>
 
@@ -38,20 +37,21 @@
     <div class="legal flex-center">
         <p>&copy; 2024. All rights reserved.</p>
 
-       
+
     </div>
 </footer>
-    <!-- ==== js ==== -->
-    <script src="asset/js/addToCart.js"></script>
-    <script src="asset/js/items.js"></script>
-    <script src="asset/js/navbar.js"></script>
-    <script src="data/savedata.js"></script>
+<!-- ==== js ==== -->
+<script src="asset/js/addToCart.js"></script>
+<script src="asset/js/items.js"></script>
+<script src="asset/js/navbar.js"></script>
+<script src="data/savedata.js"></script>
 
-    <!-- slider -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="asset/slider/script.js"></script>
+
+<!-- slider -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="asset/slider/script.js"></script>
 
 
 
