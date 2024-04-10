@@ -2,6 +2,7 @@
     include 'login_sucess.php';
     include 'productlinkgenerate.php';
     // include 'class/ProductBought_class.php';
+    $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
     ?>
 
     <!DOCTYPE html>
@@ -107,7 +108,7 @@
                         </svg>
 
                         <div class="items-amount flex-center">
-                            0
+                            <?php if(isset($_SESSION['itemAmount'])) {echo count($_SESSION['itemAmount']);} else {echo 0;} ?>
                         </div>
 
 
@@ -119,7 +120,6 @@
 
                             <ul class="cart-body">
                                 <table class="cart-table">
-
                                 </table>
                             </ul>
 

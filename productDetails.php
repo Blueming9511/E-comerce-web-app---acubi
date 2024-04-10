@@ -5,7 +5,7 @@ include 'header.php';
 <?php
 // Check if the 'id' parameter exists in the URL
 if(isset($_GET['id'])) {
-    // Retrieve the 'id' value from the URL
+    $redirect = $_GET['redirect'];
     $productId = $_GET['id'];
     $product = new Shop;
     $showProduct = $product->displayProductsById($productId);
@@ -46,7 +46,9 @@ if(isset($_GET['id'])) {
 
             <!-- ADD TO CART BUTTON -->
             <div class="addToCart">
-                <button id="addToCart-btn" onclick="add(<?php echo $result['product_id'] ?>)">BUY NOW</button>
+                <a href="checkSession.php?redirect=<?php echo $redirect?>&id=<?php echo $productId?>">
+                    <button id="addToCart-btn">BUY NOW</button>
+                </a>
                 </script>
             </div>
         </div>

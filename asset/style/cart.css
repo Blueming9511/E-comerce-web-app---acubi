@@ -130,13 +130,31 @@ table {
 }
 
 .checkout {
-  
+  margin-left: 50%;
 
 }
 .cart-form {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
+
+.cart-form img{
+  width: 8rem;
+}
+
+.shop-table {
+  margin-left: 50%;
+  width: 100rem;
+}
+
+.shop-table .product-img {
+  width: 100%;
+  display: flex;
+  gap: 10rem;
+}
+
 
 .cart-table, .cart-table td {
   border-collapse: collapse;

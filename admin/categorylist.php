@@ -7,10 +7,6 @@ include "class/category_class.php";
 <?php
 $category = new Category;
 $showCategory = $category->showCategory();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $categoryName = $_POST['categoryName'];
-  $insert = $category->insertCategory($categoryName);
-}
 ?>
 
 <div class="right">
@@ -21,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <th>No.</th>
         <th>ID</th>
         <th>Name</th>
+        <th>Image</th>
         <th colspan = "2">Action</th>
       </tr>
       <?php
@@ -33,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td><?php echo $i ?></td>
             <td><?php echo $result['category_id'] ?></td>
             <td><?php echo $result['category_name'] ?></td>
+            <td><img src="uploads/<?php echo $result['product_img'] ?>"></td>
             <td>
               
               <a class="btn" href="categoryedit.php?category_id=<?php echo $result['category_id'] ?>">
@@ -44,9 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Delete
               </a>
             </td>
-
-
-
           </tr>
       <?php
         }
