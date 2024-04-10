@@ -1,0 +1,33 @@
+
+.categories {
+    padding: 10px;
+}
+
+.category-a {
+    width: 100%;
+    position: relative;
+    /* Enable absolute positioning for child elements */
+}
+
+.category-a img {
+    width: 100%;
+    height: fit-content;
+}
+
+.category-name {
+    font-size: 50px;
+    position: absolute;
+    bottom: 70px;
+    /* Positions the element 10px from the bottom */
+    left: 50px;
+    /* Positions the element 10px from the left */
+    color: white;
+    z-index: 1;
+    /* Adjust if needed for overlapping elements */
+}
+
+.category-title{
+    font-size: 50px;
+    margin-left: .2em;
+    font-family: var(--emphasized-font);
+}

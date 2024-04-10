@@ -25,9 +25,9 @@
         <link rel="stylesheet" href="asset/style/checkout.css">
         <link rel="stylesheet" href="asset/style/item.css">
         <link rel="stylesheet" href="asset/style/ProductCard.css">
-        <link rel="stylesheet" href="asset/style/shop.css">
         <link rel="stylesheet" href="asset/style/top_bottom.css">
         <link rel="stylesheet" href="asset/style/productDetails.css">
+        <link rel="stylesheet" href="asset/style/category.css">
         <link rel="stylesheet" href="asset/style/order.css">
         <link rel="stylesheet" href="asset/slider/slider.css">
         <script defer src="asset/slider/script.js"></script>
@@ -60,6 +60,13 @@
                         <a href="shop.php" class="shop_page">SHOP</a>
                         <a href="orderComplete.php" class="yourOrder_page">YOUR ORDER</a>
                         <a href="about.php" class="about_page">ABOUT</a>
+                        <?php
+                        if (isset($_SESSION['user']) && $isAdmin === true) { ?>
+
+                            <a href="admin/productlist.php" class="admin_page">ADMIN</a>
+                        <?php
+                        }
+                        ?>
                     </div>
 
                 </div>
@@ -71,6 +78,13 @@
                     <a href="shop.php" id="shop_page">SHOP</a>
                     <a href="orderComplete.php" id="yourOrder_page">YOUR ORDER</a>
                     <a href="about.php" id="about_page">ABOUT</a>
+                    <?php
+                    if (isset($_SESSION['user']) && $isAdmin === true) { ?>
+
+                        <a href="admin/productlist.php" class="admin_page">ADMIN</a>
+                    <?php
+                    }
+                    ?>
                 </nav>
                 <!-- Logo -->
                 <div class="logo">
@@ -105,7 +119,7 @@
 
                             <ul class="cart-body">
                                 <table class="cart-table">
-                                    
+
                                 </table>
                             </ul>
 

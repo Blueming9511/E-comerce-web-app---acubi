@@ -15,31 +15,31 @@ if (isset($_POST["username_login"]) && isset($_POST['pass_login'])) {
 
   $user = $_POST["username_login"];
   $pass = $_POST["pass_login"];
+  $data = login($user, $pass);
+  if ($data) {
 
-  // phan quyen admin
-  if ($user === "admin" &&  $pass == "admin123") {
-
-    $_SESSION["user"] = "admin";
-    header("Location: admin/categorylist.php");
-  } else {
-
-    $data = login($user, $pass);
-    if ($data) {
-
+    // Check if it is admin
+    if ($data['username']  == "admin") {
+      $_SESSION["isAdmin"] = true;
       $_SESSION['user'] = $user;
       $_SESSION['name'] = $data['firstname'] . ' ' . $data['lastname'];
-      if ($data['activated'] == 0) {
-        $error = 'Please vertify your account!';
-      } else {
-        header("Location: index.php");
-        exit();
-      }
-
-    } else {
-      $error = 'Username or Password incorrect!';
+      header("Location: index.php");
+      exit();
     }
+    $_SESSION["isAdmin"] = false;
+    $_SESSION['user'] = $user;
+    $_SESSION['name'] = $data['firstname'] . ' ' . $data['lastname'];
+    if ($data['activated'] == 0) {
+      $error = 'Please vertify your account!';
+    } else {
+      header("Location: index.php");
+      exit();
+    }
+  } else {
+    $error = 'Username or Password incorrect!';
   }
 }
+
 
 
 
