@@ -76,32 +76,54 @@ class Product {
     }
 
     public function sortedProductById() {
-        $query = "SELECT * from tbl_product ORDER BY product_id ORDER BY product_id DESC ";
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
+        ORDER BY product_id";
         $result = $this -> db -> select($query);
         return $result;
+     
     }
     public function sortedProductByCategory() {
-        $query = "SELECT * from tbl_product ORDER BY product_category ORDER BY product_category DESC ";
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
+        ORDER BY category_id";
         $result = $this -> db -> select($query);
         return $result;
+        
     }
 
     public function sortedProductByName() {
-        $query = "SELECT * from tbl_product ORDER BY product_name ORDER BY product_name DESC ";
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
+        ORDER BY product_name";
         $result = $this -> db -> select($query);
-        return $result;
+        return $result;        
     }
 
     public function sortedProductByPrice() {
-        $query = "SELECT * from tbl_product ORDER BY product_price ORDER BY product_price DESC ";
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
+        ORDER BY product_price";
         $result = $this -> db -> select($query);
-        return $result;
+        return $result;        
     }
     public function sortedProductByBrand() {
-        $query = "SELECT * from tbl_product ORDER BY product_brand ORDER BY product_brand DESC ";
+        $query = "SELECT tbl_product.*, tbl_category.category_name, tbl_brand.brand_name
+        FROM tbl_product 
+        INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+        INNER JOIN tbl_brand ON tbl_category.category_id = tbl_brand.category_id
+        ORDER BY brand_id";
         $result = $this -> db -> select($query);
-        return $result;
-    }
+        return $result; 
+    }     
 
     
 

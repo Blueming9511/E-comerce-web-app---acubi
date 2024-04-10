@@ -6,41 +6,22 @@ require_once "class/product_class.php";
 
 <?php
 $product = new Product;
-$showProduct = $product -> showProduct();
+$showProduct = $product->showProduct();
 ?>
-
-<script>
-    $('#sort').change(function() {
-        let value = $this.find(':selected').val();
-        
-        $.ajax({
-            url: "product-api.php",
-            type: "POST",
-            data: "value=" + value,
-            beforeSend:function() {
-                $("table").innerhtml("...Waiting...");
-            },
-            success:function(data) {
-                $("table").innerhtml(data);
-                alert(data);
-            }
-        })
-    })
-</script>
 
 <div class="right">
     <div class="product-list">
         <h1>PRODUCTS LIST</h1> <br>
-            <label for="sort">Sort by: </label>
-            <div class="filter">
-                <select class="sort" id ="sort">
-                    <option value="id">ID</option>
-                    <option value="category">Category</option>
-                    <option value="brand">Brand</option>
-                    <option value="name">Name</option>
-                    <option value="price">Price</option>
-                </select>
-            </div>
+        <label for="sort">Sort by: </label>
+        <div class="filter">
+            <select class="sort" id="sort">
+                <option value="id">ID</option>
+                <option value="category">Category</option>
+                <option value="brand">Brand</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
 
         <table>
             <tr>
@@ -99,3 +80,20 @@ $showProduct = $product -> showProduct();
 
 </html>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#sort').change(function(event) {
+        let value = $(event.target).val();
+        $.ajax({
+            url: "product-api.php",
+            type: "POST",
+            data: "value=" + value,
+            beforeSend: function() {
+                $("table").html("...Waiting...");
+            },
+            success: function(data) {
+                $("table").html(data);
+            }
+        })
+    })
+</script>
