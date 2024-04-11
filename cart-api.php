@@ -2,7 +2,6 @@
 include 'class/ProductBought_class.php';
 if (isset($_GET['id']) && $_GET['id'] != null) {
     $productId = $_GET['id'];
-    var_dump($productId);
     $product = new ProductBought;
     $found = $product -> displayProductBoughtById($productId);
 

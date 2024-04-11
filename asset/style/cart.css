@@ -130,14 +130,15 @@ th {
   transition: all 0.2s ease-in-out;
 }
 
-table {
-  max-width: 60em;
-}
-
 .checkout {
   margin-left: 50%;
 
 }
+
+.cart-flex .cart-wrapper {
+  max-width: 80rem;
+}
+
 .cart-form {
   display: flex;
   justify-content: center;
@@ -154,7 +155,7 @@ table {
 .shop-table .product-img {
   width: 100%;
   display: flex;
-  gap: 10rem;
+  gap: 2rem;
 }
 
 

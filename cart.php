@@ -39,7 +39,6 @@ include 'header.php';
                             $subTotal = 0;
                             while ($result = $results->fetch_assoc()) {
                                 $subTotal += $result['product_price'] * $_SESSION['itemAmount'][$result['product_id']];
-                                var_dump($result);
                     ?>
                                 <tr class="cart-item" class="product">
                                     <td class="product-img">
