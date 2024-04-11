@@ -53,7 +53,7 @@
     <body>
         <div class="header-wrapper">
 
-            <header class="navbar " style="height: 6em !important;"  >
+            <header class="navbar " style="height: 6em !important;">
 
                 <div class="dropdown" style="display: none;">
                     <button onclick="myFunction()" class="dropbtn"> <box-icon class="bx" name='menu'></box-icon></button>
@@ -113,7 +113,7 @@
                 </div>
 
 
-                <div class="left" style="padding-right: 0;" >
+                <div class="left" style="padding-right: 0;">
 
 
                     <!-- Cart -->
@@ -170,6 +170,7 @@
                 </div>
 
                 <script>
+                    
                     const search_icon = document.querySelector(".search-icon");
                     search_icon.addEventListener("click", () => {
                         let search_wrapper = document.querySelector(".search-wrapper");
@@ -181,6 +182,15 @@
                         let search_wrapper = document.querySelector(".search-wrapper");
                         search_wrapper.classList.toggle("open");
                     })
+
+                    function myFunction() {
+                        const menu = document.getElementById('myDropdown')
+                        if (menu.style.display === 'none') {
+                            menu.style.display = 'block'
+                        } else {
+                            menu.style.display = 'none'
+                        }
+                    }
                 </script>
 
                 <!-- Login -->
