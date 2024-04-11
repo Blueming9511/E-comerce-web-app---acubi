@@ -137,6 +137,7 @@ th {
 
 .cart-flex .cart-wrapper {
   max-width: 80rem;
+  min-width: 20rem;
 }
 
 .cart-form {

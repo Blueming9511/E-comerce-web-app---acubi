@@ -89,7 +89,7 @@ $total = $totalResult->fetch_row()[0];
             <div class="cart-footer">
                 <div class="total-title">Total</div>
                 <div class="total-money">
-                    $<?php echo $subTotal ?>.00
+                    $<?php echo $total ?>.00
                 </div>
             </div>
         </div>

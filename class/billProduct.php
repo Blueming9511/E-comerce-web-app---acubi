@@ -45,7 +45,7 @@ class BillProduct
     }
 
     public function displayTotalMoney($billId) {
-        $query = "SELECT SUM(quantity*price) FROM tbl_bill_product WHERE bill_id = '$billId'";
+        $query = "SELECT SUM(price) FROM tbl_bill_product WHERE bill_id = '$billId'";
         $result = $this -> db -> select($query);
         return $result;
     }
